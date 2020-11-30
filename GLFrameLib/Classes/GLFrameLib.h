@@ -7,11 +7,3 @@
 
 
 #import <GLFrameManager.h>
-
-
-
-
-#import <Foundation/Foundation.h>
-
-@interface GLFrameLib : NSObject
-@end

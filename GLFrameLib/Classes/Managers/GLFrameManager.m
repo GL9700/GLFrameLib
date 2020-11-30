@@ -16,6 +16,11 @@
 @end
 
 @implementation GLFrameManager
+
++ (void)enableDebug:(BOOL)debug {
+    
+}
+
 + (instancetype)SharedKit {
     static dispatch_once_t onceToken;
     static GLFrameManager *kitInstance;

@@ -1,0 +1,12 @@
+
+(direct:col, padding: 30, backgroundColor: 0xFFFFFF, onTouch:"onClickBackground"){
+    [label (marginTop: 100, text:"立即登陆", font:"PingFangSC-Medium", size:33)],
+    [label (marginTop: 15, text:"学习，就从现在开始吧", size: 20, color: 0x666666, )],
+    [textField <phoneTextField> (marginTop: 75, height: 60,  placeholder:"请输入手机号", size: 18, text:"15322223333", font:"PingFangSC-Medium")],
+    [view (height: 0.5, backgroundColor: 0x3760FF) ],
+    [label <checkResultLabel> (color: 0xFF0000, alignSelf: center, textAlign: 1)],
+    [view (direct: column, alignMainAxis: end,  grow: 1, ) {
+        [button <verifyButton> (marginBottom: 40, height: 44, text:"获取验证码", cornerRadius:22, backgroundColor: 0x227FFF, onTouch:"onClickLoadVerifyCode")]
+    }]
+    
+}

@@ -1,0 +1,6 @@
+framework module GLFrameLib {
+  umbrella header "GLFrameLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

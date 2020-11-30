@@ -1,0 +1,34 @@
+{
+  "name": "GLFrameLib",
+  "version": "0.1.0",
+  "summary": "A short description of GLFrameLib.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/36617161@qq.com/GLFrameLib",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "36617161@qq.com": "ligl@wdcloud.com"
+  },
+  "source": {
+    "git": "https://github.com/36617161@qq.com/GLFrameLib.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "GLFrameLib/Classes/**/*",
+  "resources": "GLFrameLib/Assets/*",
+  "dependencies": {
+    "Yoga": [
+
+    ],
+    "GLExtensions": [
+
+    ],
+    "SDWebImage": [
+
+    ]
+  }
+}

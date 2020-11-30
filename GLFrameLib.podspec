@@ -28,15 +28,15 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/36617161@qq.com/GLFrameLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'GLFrameLib/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'GLFrameLib' => ['GLFrameLib/Assets/*.png']
-  # }
+  s.resource = 'GLFrameLib/Assets/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Yoga'
+  s.dependency 'GLExtensions'
+  s.dependency 'SDWebImage'
 end

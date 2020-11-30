@@ -8,22 +8,16 @@
 
 #import "GLViewController.h"
 
-@interface GLViewController ()
-
-@end
-
 @implementation GLViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [GLFrameManager frameFile:@"Login.ui" inContainer:self complete:^(UIView *rootView) {
+        rootView.frame = self.view.frame;
+        [self.view addSubview:rootView];
+    }];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

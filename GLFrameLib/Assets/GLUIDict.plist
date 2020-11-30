@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIView</key>
+	<string>view</string>
+	<key>UIStackView</key>
+	<string>stack</string>
+	<key>UIImageView</key>
+	<string>image</string>
+	<key>UILabel</key>
+	<string>label</string>
+	<key>UIButton</key>
+	<string>button</string>
+	<key>UITextField</key>
+	<string>textField</string>
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+PODS:
+  - GLExtensions (1.0.5)
+  - GLFrameLib (0.1.0):
+    - GLExtensions
+    - SDWebImage
+    - Yoga
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
+  - Yoga (1.14.0)
+
+DEPENDENCIES:
+  - GLFrameLib (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - GLExtensions
+    - SDWebImage
+    - Yoga
+
+EXTERNAL SOURCES:
+  GLFrameLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GLExtensions: 383d5532d5824e1b34c04e860752df58d7de37cd
+  GLFrameLib: 3f56cdebd0acde62c73e388de7008dd2c4b6d244
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+
+PODFILE CHECKSUM: fcf12bd58ee6865f7db138ee9d804088251e1fce
+
+COCOAPODS: 1.10.0

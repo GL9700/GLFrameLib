@@ -8,5 +8,4 @@
     [view (direct: column, alignMainAxis: end,  grow: 1, ) {
         [button <verifyButton> (marginBottom: 40, height: 44, text:"获取验证码", cornerRadius:22, backgroundColor: 0x227FFF, onTouch:"onClickLoadVerifyCode")]
     }]
-    
 }

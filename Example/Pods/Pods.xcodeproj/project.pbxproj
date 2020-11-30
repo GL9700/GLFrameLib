@@ -122,7 +122,6 @@
 		78E932A220E08822CEF71B6D3499F419 /* YGValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C274691540A0589B52BF8E7F41B93192 /* YGValue.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
 		7B522A85B21E2282987EC191BBB3B5C1 /* UIImage+GLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5705D70AC44E336D01E5A991469148DC /* UIImage+GLExtension.m */; };
 		7B9D650922F740779BC9FD46E7C783D9 /* GLFrameExts.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FC65B39F2C57CC724DEDE47BD02B36 /* GLFrameExts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7CD571E586A269F71168D3356D9E0E8C /* GLFrameLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 669932258D1DFD353F4AEFCB43CE330D /* GLFrameLib.m */; };
 		7D4FDF3CAA843DBDB0293CC61FBDA460 /* UIView+Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = F72E14859FDF1C14D0C5FFC1BACF5D56 /* UIView+Yoga.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E33A890F3D159ACA700CCB5F346C820 /* SDWebImageTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A073869CBA60045E3665FD2A2E0D5F /* SDWebImageTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E3DF1D00DE71F708A9C352DA8A7E1D8 /* YGMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = BC833C421895C567F362BB79ADE7953E /* YGMarker.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -372,7 +371,7 @@
 		2B4F25FF38782072DD5B056577FC15CB /* SDGraphicsImageRenderer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDGraphicsImageRenderer.m; path = SDWebImage/Core/SDGraphicsImageRenderer.m; sourceTree = "<group>"; };
 		2B7BC7164A195801E72396499BECF4DA /* SDImageCacheConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheConfig.h; path = SDWebImage/Core/SDImageCacheConfig.h; sourceTree = "<group>"; };
 		2B809512E984CFB142B2750161E9BB7C /* GLExtReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GLExtReachability.h; path = GLExtensions/Classes/NS/GLExtReachability.h; sourceTree = "<group>"; };
-		2C8CD20A36B059A4B9F04569C45760EE /* Pods_GLFrameLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GLFrameLib_Example.framework; path = "Pods-GLFrameLib_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C8CD20A36B059A4B9F04569C45760EE /* Pods_GLFrameLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GLFrameLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC67F554F2D6BCB4F7BAF207D11F48C /* GLFrameViewProp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GLFrameViewProp.h; sourceTree = "<group>"; };
 		2D0F4BB1CCFA32C448460F3A4A26E578 /* UIResponder+GLExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+GLExtension.m"; path = "GLExtensions/Classes/UI/UIResponder+GLExtension.m"; sourceTree = "<group>"; };
 		2ED182AA0F78090F719D1D7A6F307FC1 /* NSImage+Compatibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+Compatibility.m"; path = "SDWebImage/Core/NSImage+Compatibility.m"; sourceTree = "<group>"; };
@@ -429,8 +428,7 @@
 		62A073869CBA60045E3665FD2A2E0D5F /* SDWebImageTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransition.h; path = SDWebImage/Core/SDWebImageTransition.h; sourceTree = "<group>"; };
 		632C88119E423D7926CAB4831185A59A /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/Core/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		65AEBE8334416244E3DF12554B723681 /* SDImageAssetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAssetManager.h; path = SDWebImage/Private/SDImageAssetManager.h; sourceTree = "<group>"; };
-		65D0A19C165FA1126B1360680FE6DB12 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = yoga.framework; path = Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		669932258D1DFD353F4AEFCB43CE330D /* GLFrameLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GLFrameLib.m; path = GLFrameLib/Classes/GLFrameLib.m; sourceTree = "<group>"; };
+		65D0A19C165FA1126B1360680FE6DB12 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6756820ACC76271FCD1DFE16D566FC0F /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/Core/UIButton+WebCache.m"; sourceTree = "<group>"; };
 		67DF75BC5C58CE0A1894217D1B98A45E /* UIColor+GLExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+GLExtension.m"; path = "GLExtensions/Classes/UI/UIColor+GLExtension.m"; sourceTree = "<group>"; };
 		6850E2065D931A128163B348EBA99E1F /* SDWebImageTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageTransition.m; path = SDWebImage/Core/SDWebImageTransition.m; sourceTree = "<group>"; };
@@ -445,7 +443,7 @@
 		6D74E9A97AFE5BE9DD6942DC44100948 /* SDImageIOAnimatedCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageIOAnimatedCoder.m; path = SDWebImage/Core/SDImageIOAnimatedCoder.m; sourceTree = "<group>"; };
 		6E647EBDB261FCBB84444756FC3F7C1C /* GLFrameLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GLFrameLib.debug.xcconfig; sourceTree = "<group>"; };
 		6FC69BC7633A696061C9F6808F45DEEB /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/Core/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		70C592F43411C3F1FA12FE9D94D3B7A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		70C592F43411C3F1FA12FE9D94D3B7A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		70D674BB4045E3709103111296847422 /* TypeProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TypeProperty.h; sourceTree = "<group>"; };
 		717AD5CAB92AFCE836048EB78EEF72A5 /* SDFileAttributeHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDFileAttributeHelper.h; path = SDWebImage/Private/SDFileAttributeHelper.h; sourceTree = "<group>"; };
 		726FAE01703BF1B3D865168457D4CC79 /* YGConfig.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = YGConfig.cpp; path = yoga/YGConfig.cpp; sourceTree = "<group>"; };
@@ -466,9 +464,9 @@
 		8557F7581D97BBC755A0A530FF6924E2 /* SDImageCacheDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheDefine.h; path = SDWebImage/Core/SDImageCacheDefine.h; sourceTree = "<group>"; };
 		8699AFB7640854A2E9C5A1E9DB9B803E /* YGLayout.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = YGLayout.cpp; path = yoga/YGLayout.cpp; sourceTree = "<group>"; };
 		87334E7E8A5B85C5FED5578761BC09A5 /* GLFrameRubyParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GLFrameRubyParser.m; sourceTree = "<group>"; };
-		87CE152EF7DAEE9302CE13F5A1C91CAE /* GLExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GLExtensions.framework; path = GLExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87CE152EF7DAEE9302CE13F5A1C91CAE /* GLExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GLExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DAB7E877FD1348762EFA0FBBF97154 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/Core/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
-		89D28554F80210A8253C7707AC286EBB /* GLFrameLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GLFrameLib.framework; path = GLFrameLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D28554F80210A8253C7707AC286EBB /* GLFrameLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GLFrameLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDF05C00C29CEC06A9CC910992E9370 /* SDImageIOAnimatedCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOAnimatedCoder.h; path = SDWebImage/Core/SDImageIOAnimatedCoder.h; sourceTree = "<group>"; };
 		8BEEED7C084B4AC7A8BC8DB473061EEE /* GLExtensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GLExtensions.release.xcconfig; sourceTree = "<group>"; };
 		8CFE7B789996C87C38194AF3F328CEA7 /* NSTimer+GLExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTimer+GLExtension.m"; path = "GLExtensions/Classes/NS/NSTimer+GLExtension.m"; sourceTree = "<group>"; };
@@ -494,7 +492,7 @@
 		9AC900AC68CC22C9CE767D303182E95D /* SDWebImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImage.h; path = WebImage/SDWebImage.h; sourceTree = "<group>"; };
 		9CDBB5D48181AFD4BF467407A5A642F3 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/Core/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
 		9D09ECB60A931601073C0B16707454D1 /* SDWebImageDownloaderRequestModifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderRequestModifier.h; path = SDWebImage/Core/SDWebImageDownloaderRequestModifier.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EB641D1BAA8E10A869AB6376AA96618 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/Core/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		9EEB10D575AE411478B6D2E7D7C88ADF /* Yoga-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Yoga-umbrella.h"; sourceTree = "<group>"; };
 		A2C9D273F1E28E6D6B7EC6F79E575680 /* UIView+GLExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+GLExtension.h"; path = "GLExtensions/Classes/UI/UIView+GLExtension.h"; sourceTree = "<group>"; };
@@ -510,7 +508,7 @@
 		AE9E9EE2525EBF04164743318EB02A10 /* SDWebImageOptionsProcessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOptionsProcessor.h; path = SDWebImage/Core/SDWebImageOptionsProcessor.h; sourceTree = "<group>"; };
 		AED04BBBFE123DD1EC86EB452FF8CC42 /* SDWeakProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWeakProxy.h; path = SDWebImage/Private/SDWeakProxy.h; sourceTree = "<group>"; };
 		B01ADE89F521517399F0AAE0A7E87315 /* SDImageTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageTransformer.m; path = SDWebImage/Core/SDImageTransformer.m; sourceTree = "<group>"; };
-		B0B214D775196BA7CA8E17E53048A493 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B214D775196BA7CA8E17E53048A493 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B148E88E1608AD12EB99C5C6A1454F53 /* SDWebImageTransitionInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransitionInternal.h; path = SDWebImage/Private/SDWebImageTransitionInternal.h; sourceTree = "<group>"; };
 		B19A1A5F5CA5E8FFB624447A1769F5D7 /* NSImage+Compatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSImage+Compatibility.h"; path = "SDWebImage/Core/NSImage+Compatibility.h"; sourceTree = "<group>"; };
 		B341ED34EE5C064515A4CFD6E6EB1188 /* SDWebImageCacheSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCacheSerializer.m; path = SDWebImage/Core/SDWebImageCacheSerializer.m; sourceTree = "<group>"; };
@@ -538,7 +536,7 @@
 		C3B36539E76367CD4B15A64CEAF2F3E2 /* SDImageAWebPCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAWebPCoder.m; path = SDWebImage/Core/SDImageAWebPCoder.m; sourceTree = "<group>"; };
 		C4119B92941E6B8468152907C5046D24 /* UIButton+GLExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+GLExtension.m"; path = "GLExtensions/Classes/UI/UIButton+GLExtension.m"; sourceTree = "<group>"; };
 		C6F07203EF8FC26B52AE81EF5B73250D /* ElementEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ElementEntity.h; sourceTree = "<group>"; };
-		C727933E56470EDB6561DA13956B302B /* GLFrameLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GLFrameLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C727933E56470EDB6561DA13956B302B /* GLFrameLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GLFrameLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CABFDE10F3A620359BFDE4DC7A0C13DA /* NSData+GLExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+GLExtension.h"; path = "GLExtensions/Classes/NS/NSData+GLExtension.h"; sourceTree = "<group>"; };
 		CC1FBE550ACD8AD21869DEAAC12A07D7 /* GLFrameLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GLFrameLib-umbrella.h"; sourceTree = "<group>"; };
 		CCF4E1722353E4F8C237627077B982CF /* YGMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGMacros.h; path = yoga/YGMacros.h; sourceTree = "<group>"; };
@@ -578,7 +576,7 @@
 		E84A89F69393DD4BC738D7161925C323 /* UIImage+ExtendedCacheData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ExtendedCacheData.m"; path = "SDWebImage/Core/UIImage+ExtendedCacheData.m"; sourceTree = "<group>"; };
 		E929EE152784485110C77607CE5156DB /* SDImageAssetManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAssetManager.m; path = SDWebImage/Private/SDImageAssetManager.m; sourceTree = "<group>"; };
 		E9524C88D69E4A6E1D4115F1EBBCFFEC /* SDWebImageDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDefine.h; path = SDWebImage/Core/SDWebImageDefine.h; sourceTree = "<group>"; };
-		E95BF0B0015636FC2D9D0564CC210DBE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E95BF0B0015636FC2D9D0564CC210DBE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E982E4CE879968414C9DD4E2E6AC2B58 /* Yoga-internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Yoga-internal.h"; path = "yoga/Yoga-internal.h"; sourceTree = "<group>"; };
 		E9FE1DE8CE2FFA913E811B6DD0A1401D /* SDImageTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageTransformer.h; path = SDWebImage/Core/SDImageTransformer.h; sourceTree = "<group>"; };
 		EBC9C318D7EDE836DD232D19CF1E4C86 /* YGLayout+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YGLayout+Private.h"; sourceTree = "<group>"; };
@@ -666,7 +664,6 @@
 			isa = PBXGroup;
 			children = (
 				911EBE68D74E13764FBA37ABAA4F73E5 /* GLFrameLib.h */,
-				669932258D1DFD353F4AEFCB43CE330D /* GLFrameLib.m */,
 				B67F1319916C1E80C8B7C271109CBF67 /* GLUIDict.plist */,
 				49550C0231A69A48DF0E2989051218D3 /* Cagegorys */,
 				F007FD5CC68ACC1ABCD23038353D0982 /* Core */,
@@ -802,7 +799,6 @@
 				99D5ABA2010F94EDAA99A6EF98623A9A /* UIWindow+GLExtension.m */,
 				720A9DFE0F18F1935DB7B8C27CCE7637 /* Support Files */,
 			);
-			name = GLExtensions;
 			path = GLExtensions;
 			sourceTree = "<group>";
 		};
@@ -838,7 +834,6 @@
 				E982E4CE879968414C9DD4E2E6AC2B58 /* Yoga-internal.h */,
 				F4B546D5069F2FF22B15BE2099BE8EF3 /* Support Files */,
 			);
-			name = Yoga;
 			path = Yoga;
 			sourceTree = "<group>";
 		};
@@ -848,7 +843,6 @@
 				7E2C11B0BA12BB2FEACB8835B46B9284 /* Core */,
 				4352387F44BC34353A54B396A09C7D4B /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1497,7 +1491,6 @@
 				81FD19CA120C9F5852DF0450D114333E /* GLFrameExts.m in Sources */,
 				FB1C346208BBE0B0DD7CCC6C3411E367 /* GLFrameFileManager.m in Sources */,
 				13954320662FCF314B4E78139EEC81CC /* GLFrameLib-dummy.m in Sources */,
-				7CD571E586A269F71168D3356D9E0E8C /* GLFrameLib.m in Sources */,
 				7E780F573AE305C9E8D8563738FF4BCB /* GLFrameManager.m in Sources */,
 				9C981504B27476F6E750331BA4B137E4 /* GLFrameRubyParser.m in Sources */,
 				ABC2A2EB9A3B86EB5C4480AA2A3D7E79 /* GLFrameViewMaker.m in Sources */,
@@ -1929,8 +1922,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

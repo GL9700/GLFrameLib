@@ -21,6 +21,14 @@
     
 }
 
++ (void)registerFrameDict:(NSString *)dictFilePath {
+    NSMutableDictionary *sub = [NSMutableDictionary dictionaryWithContentsOfFile:dictFilePath];
+    if(sub){
+        [sub addEntriesFromDictionary:[GLFrameManager SharedKit].additional];
+        [GLFrameManager SharedKit].additional = [sub copy];
+    }
+}
+
 + (instancetype)SharedKit {
     static dispatch_once_t onceToken;
     static GLFrameManager *kitInstance;
@@ -50,4 +58,10 @@
     [maker makerView];
 }
 
+- (NSDictionary *)additional {
+    if(!_additional) {
+        _additional = [NSDictionary dictionary];
+    }
+    return _additional;
+}
 @end

@@ -22,7 +22,7 @@ pod 'GLFrameLib'
 
 ## Author
 
-36617161@qq.com, ligl@wdcloud.com
+liguoliang, 36617161@qq.com
 
 ## License
 

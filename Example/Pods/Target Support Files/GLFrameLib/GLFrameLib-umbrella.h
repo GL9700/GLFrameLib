@@ -19,6 +19,7 @@
 #import "ElementEntity.h"
 #import "TypeProperty.h"
 #import "GLFrameRubyParser.h"
+#import "GLFrameXMLParser.h"
 #import "GLFrameBaseProcotol.h"
 #import "GLFrameParserProtocol.h"
 #import "UIView+Yoga.h"

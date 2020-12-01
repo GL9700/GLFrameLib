@@ -7,3 +7,5 @@
 
 
 #import <GLFrameManager.h>
+#import <GLFrameBaseProcotol.h>
+#import <GLFrameParserProtocol.h>

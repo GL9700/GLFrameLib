@@ -13,8 +13,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [GLFrameManager enableDebug:YES];
-    [GLFrameManager frameFile:@"Login.ui" inContainer:self complete:^(UIView *rootView) {
-        rootView.frame = self.view.frame;
+    [GLFrameManager frameFile:@"Login.xml" inContainer:self complete:^(UIView *rootView) {
+        CGFloat x = 0;
+        CGFloat y = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+        CGFloat width = self.view.bounds.size.width;
+        CGFloat height = self.view.bounds.size.height - y - 34;
+        rootView.frame = CGRectMake(x, 0, width, height);
         [self.view addSubview:rootView];
     }];
 }
@@ -27,6 +31,7 @@
 
 - (void)onClickLoadVerifyCode {
     NSLog(@"获取验证码成功。。。。");
+    rto_dsp(@"r://push/GLMainViewController", nil);
 }
 
 @end

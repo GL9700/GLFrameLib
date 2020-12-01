@@ -9,6 +9,7 @@
 #import <GLFrameFileManager.h>
 #import <ElementEntity.h>
 #import <GLFrameRubyParser.h>
+#import <GLFrameXMLParser.h>
 #import <GLFrameViewMaker.h>
 
 @interface GLFrameManager()
@@ -21,8 +22,8 @@
     
 }
 
-+ (void)registerFrameDict:(NSString *)dictFilePath {
-    NSMutableDictionary *sub = [NSMutableDictionary dictionaryWithContentsOfFile:dictFilePath];
++ (void)registerFrameDict:(NSString *)path {
+    NSMutableDictionary *sub = [NSMutableDictionary dictionaryWithContentsOfFile:path];
     if(sub){
         [sub addEntriesFromDictionary:[GLFrameManager SharedKit].additional];
         [GLFrameManager SharedKit].additional = [sub copy];
@@ -48,7 +49,7 @@
     printf("-> path:\n\t%s\n\n", [path UTF8String]);
     printf("-> container:\n\t%s\n\n", [[NSString stringWithFormat:@"%@", container] UTF8String]);
     NSString *content = [GLFrameFileManager contentFromLocalPath:path];
-    ElementEntity *tree = [[GLFrameRubyParser new] treeForContent:content];
+    ElementEntity *tree = [[GLFrameXMLParser new] treeForContent:content];
     
     GLFrameViewMaker *maker = [GLFrameViewMaker new];
     maker.additional = [GLFrameManager SharedKit].additional;

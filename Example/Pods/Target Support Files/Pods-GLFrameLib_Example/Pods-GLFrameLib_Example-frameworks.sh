@@ -177,12 +177,14 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/GLExtensions/GLExtensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GLFrameLib/GLFrameLib.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GLRouter/GLRouter.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/GLExtensions/GLExtensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GLFrameLib/GLFrameLib.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GLRouter/GLRouter.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
 fi

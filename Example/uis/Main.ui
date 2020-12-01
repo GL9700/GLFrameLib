@@ -1,0 +1,8 @@
+(direct: column, width: 370, height:240){
+    [banner<bannerView>(height: 240, datasource:{
+        [item(title:"更好认识源远流长博大精深的中华文明", imgUrl:"https://p3.img.cctvpic.com/photoAlbum/page/performance/img/2020/11/30/1606740307240_392.jpg")],
+        [item(title:"走过“黄金十年”，下一站“钻石十年”", imgUrl:"https://p3.img.cctvpic.com/photoAlbum/page/performance/img/2020/12/1/1606773834105_525.jpg")],
+        [item(title:"结束160年流离 圆明园马首今天终于“回家”了！", imgUrl:"https://p1.img.cctvpic.com/photoAlbum/page/performance/img/2020/12/1/1606787871145_70.jpg")],
+        [item(title:"坚守，只为那一面五星红旗", imgUrl:"https://p3.img.cctvpic.com/photoAlbum/page/performance/img/2020/12/1/1606782113797_259.jpg")],
+    })]
+}

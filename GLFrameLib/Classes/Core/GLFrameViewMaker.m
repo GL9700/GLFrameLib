@@ -50,7 +50,7 @@
     static NSDictionary *dict;
     if (!dict) {
         dict = [NSDictionary dictionaryWithContentsOfFile:path];
-        printf("-> [conf]\n\t...root additional length:%lu\n\n",(unsigned long)dict.allKeys.count);
+        printf("-> [conf]\n\t...root additional length:%lu\n\n", (unsigned long)dict.allKeys.count);
         if (self.additional != nil) {
             NSMutableDictionary *mdict = [dict mutableCopy];
             [mdict addEntriesFromDictionary:self.additional];
@@ -64,7 +64,7 @@
     }
     if ([cls conformsToProtocol:NSProtocolFromString(@"GLFrameBaseProcotol")] &&
         [cls respondsToSelector:NSSelectorFromString(@"frameNew")]) {
-        printf("-> [custom init]\n\t...-[%s frameNew]\n\n",NSStringFromClass(cls).UTF8String);
+        printf("-> [custom init]\n\t...-[%s frameNew]\n\n", NSStringFromClass(cls).UTF8String);
         instance = [cls frameNew];
     }
     else {
@@ -84,9 +84,12 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             elementInstance = [self.targetContainer performSelector:select];
 #pragma clang diagnostic pop
-            if(elementInstance){
+            if (elementInstance) {
                 printf("-> [render]\n\t...finded bundle View...%s\n\n", element.tagName.UTF8String);
             }
+        }
+        if (elementInstance == nil) {
+            printf("-> [ ‼️ Warning ‼️ ]\n\t...Not found BundleName: %s in Container (%s)\n\n", element.tagName.UTF8String, NSStringFromClass([self.targetContainer class]).UTF8String);
         }
     }
     if ([element isKindOfClass:[ElementEntity class]] && elementInstance == nil) {
@@ -98,7 +101,7 @@
         }];
         if ([elementInstance conformsToProtocol:NSProtocolFromString(@"GLFrameBaseProcotol")] &&
             [elementInstance respondsToSelector:NSSelectorFromString(@"frameStyle")]) {
-            printf("->[custom style]\n\t...-[%s frameStyle]\n\n",NSStringFromClass(elementInstance.class).UTF8String);
+            printf("->[custom style]\n\t...-[%s frameStyle]\n\n", NSStringFromClass(elementInstance.class).UTF8String);
             [elementInstance frameStyle];
         }
         for (TypeProperty *prop in element.props) {

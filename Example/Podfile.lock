@@ -1,9 +1,10 @@
 PODS:
   - GLExtensions (1.0.5)
-  - GLFrameLib (0.1.0):
+  - GLFrameLib (0.0.1):
     - GLExtensions
     - SDWebImage
     - Yoga
+  - GLRouter (2.0.5)
   - SDWebImage (5.10.0):
     - SDWebImage/Core (= 5.10.0)
   - SDWebImage/Core (5.10.0)
@@ -11,10 +12,12 @@ PODS:
 
 DEPENDENCIES:
   - GLFrameLib (from `../`)
+  - GLRouter
 
 SPEC REPOS:
   trunk:
     - GLExtensions
+    - GLRouter
     - SDWebImage
     - Yoga
 
@@ -24,10 +27,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GLExtensions: 383d5532d5824e1b34c04e860752df58d7de37cd
-  GLFrameLib: 3f56cdebd0acde62c73e388de7008dd2c4b6d244
+  GLFrameLib: cd1c26762f040f01accd3b2c2505ecab1358d38a
+  GLRouter: c01ea5cfecb27f1f83211213b112a34d7003ab7b
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
 
-PODFILE CHECKSUM: fcf12bd58ee6865f7db138ee9d804088251e1fce
+PODFILE CHECKSUM: b824488fc38e366a573a1afcca972263f90e249a
 
 COCOAPODS: 1.10.0

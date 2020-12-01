@@ -1,19 +1,19 @@
 {
   "name": "GLFrameLib",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "summary": "A short description of GLFrameLib.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/36617161@qq.com/GLFrameLib",
+  "description": "GLFrameLib is FrameLib use scriptFile",
+  "homepage": "https://github.com/GL9700/GLFrameLib",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "36617161@qq.com": "ligl@wdcloud.com"
+    "liguoliang": "36617161@qq.com"
   },
   "source": {
-    "git": "https://github.com/36617161@qq.com/GLFrameLib.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/GL9700/GLFrameLib.git",
+    "tag": "0.0.1"
   },
   "platforms": {
     "ios": "10.0"

@@ -11,7 +11,7 @@
 
 + (void)enableDebug:(BOOL)debug;
 
-+ (void)registerFrameDict:(NSString *)dictFilePath;
++ (void)registerFrameDict:(NSString *)path;
 
 + (void)frameFile:(NSString *)NameOrPath inContainer:(id)container complete:(void(^)(UIView *rootView))handleComplete;
 @end

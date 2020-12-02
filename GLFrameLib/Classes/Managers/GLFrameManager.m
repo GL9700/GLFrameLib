@@ -49,14 +49,14 @@
     printf("-> path:\n\t%s\n\n", [path UTF8String]);
     printf("-> container:\n\t%s\n\n", [[NSString stringWithFormat:@"%@", container] UTF8String]);
     NSString *content = [GLFrameFileManager contentFromLocalPath:path];
-    ElementEntity *tree = [[GLFrameXMLParser new] treeForContent:content];
-    
-    GLFrameViewMaker *maker = [GLFrameViewMaker new];
-    maker.additional = [GLFrameManager SharedKit].additional;
-    maker.handle_Complete = handleComplete;
-    maker.targetContainer = container;
-    maker.tokenTree = tree;
-    [maker makerView];
+    [[GLFrameXMLParser new] treeForContent:content complete:^(ElementEntity *rootEntity) {
+        GLFrameViewMaker *maker = [GLFrameViewMaker new];
+        maker.additional = [GLFrameManager SharedKit].additional;
+        maker.handle_Complete = handleComplete;
+        maker.targetContainer = container;
+        maker.tokenTree = rootEntity;
+        [maker makerView];
+    }];
 }
 
 - (NSDictionary *)additional {

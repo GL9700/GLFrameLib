@@ -1,5 +1,5 @@
 <View direct="column" padding="30" bgColor="#FFFFFF" onTouch="tallMeMessage:" >
-    <Label marginTop="100" font="PingFangSC-Medium" size="33" >立刻登陆</Label>
+    <Label marginTop="100" font="PingFangSC-Medium" size="33" text="立刻登陆" />
     <Label marginTop="15" text="学习，就从现在开始吧" size="20" color="#666666" />
     <TextField bundleId="phoneTextField" marginTop="75" height="60" placeholder="请输入手机号" size="18" text="15322223333" font="PingFangSC-Medium" />
     <View height="0.5" backgroundColor="#3760FF" />

@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class TypeProperty;
+#import <TypeProperty.h>
 
 
 @interface ElementEntity : NSObject
@@ -15,7 +15,7 @@
 @property (nonatomic) NSString *tagName;
 
 /// [GLFrameLib] <ElementEntity *>sub name
-@property (nonatomic) NSMutableArray<ElementEntity *> *subs;
+@property (nonatomic) NSMutableArray<ElementEntity *> *children;
 
 /// [GLFrameLib] <TypeProperty *>props
 @property (nonatomic) NSMutableArray<TypeProperty *> *props;
@@ -24,5 +24,5 @@
 @property (nonatomic) NSString *name;
 
 /// [GLFrameLib] super ElementEntity
-@property (nonatomic) ElementEntity *superObj;
+@property (nonatomic) ElementEntity *parent;
 @end

@@ -12,4 +12,5 @@
 @property (nonatomic) id value;
 @property (nonatomic, readonly) NSString *row;
 + (instancetype)createPropertyEntityFromElementRow:(NSString *)row;
++ (instancetype)createPropertyEntityWithKey:(NSString *)key Value:(id)value;
 @end

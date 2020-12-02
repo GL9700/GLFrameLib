@@ -15,7 +15,7 @@
 @end
 
 @implementation GLFrameRubyParser
-- (ElementEntity *)treeForContent:(NSString *)content {
+- (void)treeForContent:(NSString *)content complete:(void (^)(ElementEntity *))handle {
     NSArray *separateCharset = @[@"{", @"}", @"[", @"]", @"(", @")", @"<", @">", @",", @";", @"$", @"\""];
     NSMutableCharacterSet *passCharset = [NSMutableCharacterSet alphanumericCharacterSet];
     [passCharset addCharactersInString:@" @:-/._?&!%%#，。（）‘’“”"];
@@ -49,7 +49,9 @@
         }
     }
     printf("-> [parser]\n\t...token length:%lu\n\n", (unsigned long)self.tokens.count);
-    return [self generateTokenTree];
+    if(handle){
+        handle([self generateTokenTree]);
+    }
 }
 
 - (ElementEntity *)generateTokenTree {
@@ -71,8 +73,8 @@
             continue;
         }
         else if ([tokenContent isEqualToString:@"}"]) {
-            if (sup.superObj) {
-                sup = sup.superObj;
+            if (sup.parent) {
+                sup = sup.parent;
             }
             continue;
         }
@@ -116,8 +118,8 @@
 - (ElementEntity *)createLeafEntityWithTypeName:(NSString *)typename parent:(ElementEntity *)parent {
     ElementEntity *cur = [ElementEntity new];
     cur.name = typename;
-    cur.superObj = parent;
-    [parent.subs addObject:cur];
+    cur.parent = parent;
+    [parent.children addObject:cur];
     return cur;
 }
 

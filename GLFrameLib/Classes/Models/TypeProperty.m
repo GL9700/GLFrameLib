@@ -11,6 +11,14 @@
 @end
 
 @implementation TypeProperty
+
++ (instancetype)createPropertyEntityWithKey:(NSString *)key Value:(id)value {
+    TypeProperty *instance = [TypeProperty new];
+    instance.key = key;
+    instance.value = value;
+    return instance;
+}
+
 + (instancetype)createPropertyEntityFromElementRow:(NSString *)row {
     if (row.length < 3) {
         return nil;

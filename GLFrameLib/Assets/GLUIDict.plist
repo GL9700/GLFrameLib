@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>UIView</key>
-	<string>view</string>
+	<string>View</string>
 	<key>UIStackView</key>
-	<string>stack</string>
+	<string>Stack</string>
 	<key>UIImageView</key>
-	<string>image</string>
+	<string>Image</string>
 	<key>UILabel</key>
-	<string>label</string>
+	<string>Label</string>
 	<key>UIButton</key>
-	<string>button</string>
+	<string>Button</string>
 	<key>UITextField</key>
-	<string>textField</string>
+	<string>TextField</string>
 </dict>
 </plist>

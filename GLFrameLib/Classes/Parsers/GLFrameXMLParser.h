@@ -9,5 +9,4 @@
 #import <GLFrameParserProtocol.h>
 
 @interface GLFrameXMLParser : NSObject <GLFrameParserProtocol>
-- (ElementEntity *)treeForContent:(NSString *)content;
 @end

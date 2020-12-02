@@ -108,7 +108,7 @@
             printf("-> [Setting Prop Common]\n\t...%s:%s\n\n", prop.key.UTF8String, [prop.value UTF8String]);
             [elementInstance frameSetProp:prop inContainer:self.targetContainer];
         }
-        for (ElementEntity *son in element.subs) {
+        for (ElementEntity *son in element.children) {
             UIView *subitem = [self viewFromElementWithTokenTree:son];
             if ([elementInstance isKindOfClass:[UIStackView class]]) {
                 [(UIStackView *)elementInstance addArrangedSubview:subitem];

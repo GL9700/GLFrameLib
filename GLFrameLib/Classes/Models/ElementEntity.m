@@ -8,11 +8,11 @@
 #import "ElementEntity.h"
 
 @implementation ElementEntity
-- (NSMutableArray<ElementEntity *> *)subs {
-    if (!_subs) {
-        _subs = [NSMutableArray array];
+- (NSMutableArray<ElementEntity *> *)children {
+    if (!_children) {
+        _children = [NSMutableArray array];
     }
-    return _subs;
+    return _children;
 }
 
 - (NSMutableArray<TypeProperty *> *)props {

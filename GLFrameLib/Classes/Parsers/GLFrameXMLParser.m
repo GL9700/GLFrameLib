@@ -7,6 +7,7 @@
 
 #import "GLFrameXMLParser.h"
 #import <objc/message.h>
+#import "NSString+GLExtension.h"
 
 @interface NSDictionary (DescExt)
 @end
@@ -21,18 +22,21 @@
 }
 @end
 
-@interface GLFrameXMLParser() <NSXMLParserDelegate>
+@interface GLFrameXMLParser () <NSXMLParserDelegate>
 @property (nonatomic) NSXMLParser *xml;
 @property (nonatomic) int level;
 @property (nonatomic) ElementEntity *root;
-@property (nonatomic) ElementEntity *upnode;
+@property (nonatomic) NSMutableDictionary<NSString *, ElementEntity *> *nodes;
+@property (nonatomic) void(^parserComplete)(ElementEntity *rootEntity);
+@property (nonatomic) BOOL hasError;
 @end
+
 @implementation GLFrameXMLParser
-- (ElementEntity *)treeForContent:(NSString *)content {
+- (void)treeForContent:(NSString *)content complete:(void (^)(ElementEntity *))handle {
+    self.parserComplete = handle;
     self.xml = [[NSXMLParser alloc] initWithData:[content dataUsingEncoding:NSUTF8StringEncoding]];
     self.xml.delegate = self;
     [self.xml parse];
-    return nil;
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
@@ -41,30 +45,42 @@
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    printf("-> [parser]\n\t...end\n\n");
+    if(parser.parserError) {
+        printf("-> [parser]\n\t...end...has Error \n\t...Error:%s\n\n", [[parser.parserError.userInfo description] UTF8String]);
+        return;
+    }
+    printf("-> [parser]\n\t...end...pass\n\n");
+    self.parserComplete ? self.parserComplete(self.root) : nil;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(NSDictionary<NSString *, NSString *> *)attributeDict {
-    self.level+=1;
-    printf("-> [parser]\n\t...<属性> %s, %s\n\n", [elementName UTF8String], [[attributeDict description] UTF8String]);
-    ElementEntity *entity = [ElementEntity new];
-    entity.superObj = self.upnode;
-    entity.name = elementName;
-    if(self.level==1){
-        self.root = entity;
-        self.upnode = self.root;
-    }else{
-        [self.upnode.subs addObject:entity];
+    ElementEntity *parentNode = self.nodes[SF(@"%d", self.level)];
+    self.level += 1;
+    printf("-> [parser]\n\t...<属性> (lv:%d) %s, %s\n\n", self.level, [elementName UTF8String], [[attributeDict description] UTF8String]);
+    ElementEntity *node = [ElementEntity new];
+    node.parent = parentNode;
+    node.name = elementName;
+    @autoreleasepool {
+        for (NSString *attkey in attributeDict.allKeys) {
+            id value = attributeDict[attkey];
+            TypeProperty *propEntity = [TypeProperty createPropertyEntityWithKey:attkey Value:value];
+            [node.props addObject:propEntity];
+        }
+    }
+    [parentNode.children addObject:node];
+    self.nodes[SF(@"%d", self.level)] = node;
+    if(parentNode != nil && self.root == nil) {
+        self.root = parentNode;
     }
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName {
-    self.level-=1;
+    self.level -= 1;
     printf("-> [parser]\n\t...<结束标记> %s \n\n", [elementName UTF8String]);
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    if([[string stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length>0){
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
         printf("-> [parser]\n\t ...<内容> %s\n\n", [string UTF8String]);
     }
 }
@@ -79,7 +95,15 @@
 }
 
 - (void)parser:(NSXMLParser *)parser validationErrorOccurred:(NSError *)validationError {
-    printf("-> [parser]\n\t ...<!! 验证错误 !!> %s\n\n",[[validationError.userInfo description] UTF8String]);
+    printf("-> [parser]\n\t ...<!! 验证错误 !!> %s\n\n", [[validationError.userInfo description] UTF8String]);
     [parser abortParsing];
 }
+
+- (NSMutableDictionary<NSString *, ElementEntity *> *)nodes {
+    if (!_nodes) {
+        _nodes = [NSMutableDictionary dictionary];
+    }
+    return _nodes;
+}
+
 @end

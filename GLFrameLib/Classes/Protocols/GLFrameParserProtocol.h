@@ -9,5 +9,5 @@
 #import <ElementEntity.h>
 
 @protocol GLFrameParserProtocol <NSObject>
-- (ElementEntity *)treeForContent:(NSString *)content;
+- (void)treeForContent:(NSString *)content complete:(void(^)(ElementEntity *rootEntity))handle;
 @end

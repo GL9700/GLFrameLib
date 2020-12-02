@@ -87,7 +87,7 @@
             continue;
         }
         if ([tokenContent isEqualToString:@"<"]) {
-            cur.tagName = [self nextToken];
+            cur.bundleProperty = [self nextToken];
             continue;
         }
         else if ([tokenContent isEqualToString:@">"]) {

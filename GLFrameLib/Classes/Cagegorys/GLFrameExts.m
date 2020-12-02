@@ -168,9 +168,6 @@
     else if ([prop.key isEqualToString:@"fontColor"] || [prop.key isEqualToString:@"color"]) {
         [self setTitleColor:[UIColor colorFromHexStr:prop.value] forState:UIControlStateNormal];
     }
-    else if ([prop.key isEqualToString:@"backgroundColor"]) {
-        self.backgroundColor = [UIColor colorFromHexStr:prop.value];
-    }
     else if([prop.key isEqualToString:@"imgAtClock"]) {
         int postion = [prop.value intValue];
         [self sizeToFit];
@@ -207,14 +204,12 @@
 
 @implementation UIImageView (GLFrameExt)
 - (void)frameSetProp:(TypeProperty *)prop inContainer:(UIViewController *)container {
-    if ([prop.key isEqualToString:@"remoteSRC"]) {
-        [(UIImageView *)self sd_setImageWithURL:[NSURL URLWithString:prop.value] completed:^(UIImage *_Nullable image, NSError *_Nullable error, SDImageCacheType cacheType, NSURL *_Nullable imageURL) {
-            NSLog(@"%f | %f", image.size.width, image.size.height);
-            NSLog(@"2");
-        }];
-    }
-    else if ([prop.key isEqualToString:@"localSRC"]) {
-        [self setImage:[UIImage imageNamed:prop.value]];
+    if ([prop.key isEqualToString:@"src"]) {
+        if([((NSString *)prop.value) hasPrefix:@"http"]) {
+            [(UIImageView *)self sd_setImageWithURL:[NSURL URLWithString:prop.value]];
+        }else{
+            [self setImage:[UIImage imageNamed:prop.value]];
+        }
     }
     else if ([prop.key isEqualToString:@"mode"]) {
         self.contentMode = [prop.value intValue];

@@ -76,20 +76,20 @@
 
 - (UIView *)viewFromElementWithTokenTree:(ElementEntity *)element {
     UIView *elementInstance;
-    if (element.tagName) {
-        Method method = class_getInstanceMethod([self.targetContainer class], NSSelectorFromString(element.tagName));
+    if (element.bundleProperty) {
+        Method method = class_getInstanceMethod([self.targetContainer class], NSSelectorFromString(element.bundleProperty));
         if (method) {
-            SEL select = NSSelectorFromString(element.tagName);
+            SEL select = NSSelectorFromString(element.bundleProperty);
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             elementInstance = [self.targetContainer performSelector:select];
 #pragma clang diagnostic pop
             if (elementInstance) {
-                printf("-> [render]\n\t...finded bundle View...%s\n\n", element.tagName.UTF8String);
+                printf("-> [render]\n\t...finded bundle View...%s\n\n", element.bundleProperty.UTF8String);
             }
         }
         if (elementInstance == nil) {
-            printf("-> [ ‼️ Warning ‼️ ]\n\t...Not found BundleName: %s in Container (%s)\n\n", element.tagName.UTF8String, NSStringFromClass([self.targetContainer class]).UTF8String);
+            printf("-> [ ‼️ Warning ‼️ ]\n\t...Not found BundleName: %s in Container (%s)\n\n", element.bundleProperty.UTF8String, NSStringFromClass([self.targetContainer class]).UTF8String);
         }
     }
     if ([element isKindOfClass:[ElementEntity class]] && elementInstance == nil) {
@@ -104,10 +104,6 @@
             printf("->[custom style]\n\t...-[%s frameStyle]\n\n", NSStringFromClass(elementInstance.class).UTF8String);
             [elementInstance frameStyle];
         }
-        for (TypeProperty *prop in element.props) {
-            printf("-> [Setting Prop Common]\n\t...%s:%s\n\n", prop.key.UTF8String, [prop.value UTF8String]);
-            [elementInstance frameSetProp:prop inContainer:self.targetContainer];
-        }
         for (ElementEntity *son in element.children) {
             UIView *subitem = [self viewFromElementWithTokenTree:son];
             if ([elementInstance isKindOfClass:[UIStackView class]]) {
@@ -116,6 +112,10 @@
             else if ([elementInstance isKindOfClass:[UIView class]]) {
                 [elementInstance addSubview:subitem];
             }
+        }
+        for (TypeProperty *prop in element.props) {
+            printf("-> [Setting Prop Common]\n\t...%s:%s\n\n", prop.key.UTF8String, [prop.value UTF8String]);
+            [elementInstance frameSetProp:prop inContainer:self.targetContainer];
         }
     }
     return elementInstance;

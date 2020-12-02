@@ -63,8 +63,12 @@
     @autoreleasepool {
         for (NSString *attkey in attributeDict.allKeys) {
             id value = attributeDict[attkey];
-            TypeProperty *propEntity = [TypeProperty createPropertyEntityWithKey:attkey Value:value];
-            [node.props addObject:propEntity];
+            if([attkey isEqualToString:@"bundleId"]) {
+                node.bundleProperty = value;
+            }else{
+                TypeProperty *propEntity = [TypeProperty createPropertyEntityWithKey:attkey Value:value];
+                [node.props addObject:propEntity];
+            }
         }
     }
     [parentNode.children addObject:node];

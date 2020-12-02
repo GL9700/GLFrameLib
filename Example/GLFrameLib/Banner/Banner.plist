@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>GLBannerView</key>
-	<string>banner</string>
+	<string>Banner</string>
 	<key>GLBannerItem</key>
-	<string>item</string>
+	<string>Item</string>
 </dict>
 </plist>

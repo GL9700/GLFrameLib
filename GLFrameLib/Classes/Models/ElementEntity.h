@@ -12,7 +12,7 @@
 @interface ElementEntity : NSObject
 
 /// [GLFrameLib] bundle name
-@property (nonatomic) NSString *tagName;
+@property (nonatomic) NSString *bundleProperty;
 
 /// [GLFrameLib] <ElementEntity *>sub name
 @property (nonatomic) NSMutableArray<ElementEntity *> *children;

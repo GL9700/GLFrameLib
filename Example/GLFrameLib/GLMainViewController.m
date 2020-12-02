@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.bannerView.datasource = @[
         [GLBannerItem createWithTitle:@"更好认识源远流长博大精深的中华文明" Image:@"https://p3.img.cctvpic.com/photoAlbum/page/performance/img/2020/11/30/1606740307240_392.jpg" tgtURL:nil],
         [GLBannerItem createWithTitle:@"走过“黄金十年”，下一站“钻石十年”" Image:@"https://p3.img.cctvpic.com/photoAlbum/page/performance/img/2020/12/1/1606773834105_525.jpg" tgtURL:nil],
@@ -26,7 +27,7 @@
 //    [self.view addSubview:self.bannerView];
     
     [GLFrameManager registerFrameDict:[[NSBundle mainBundle] pathForResource:@"Banner" ofType:@"plist"]];
-    [GLFrameManager frameFile:@"Main.ui" inContainer:self complete:^(UIView *rootView) {
+    [GLFrameManager frameFile:@"Main2.xml" inContainer:self complete:^(UIView *rootView) {
         [self.view addSubview:rootView];
     }];
 }

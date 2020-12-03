@@ -4,9 +4,7 @@
     <TextField bundleId="phoneTextField" marginTop="75" height="60" placeholder="请输入手机号" size="18" text="15322223333" font="PingFangSC-Medium" />
     <View height="0.5" backgroundColor="#3760FF" />
     <Label bundleId="checkResultLabel" color="#FF0000" alignSelf="center" textAlign="1" />
-    <View direct="column" alignMainAxis="end" grow="1">
+    <View direct="column" alignMainAxis="end" marginTop="30">
         <Button bundleId="verifyButton" marginBottom="40" height="44" text="获取验证码" cornerRadius="22" backgroundColor="#227FFF" onTouch="onClickLoadVerifyCode"/>
     </View>
-    <TableView width="100%" height="100%" bundleId="mainTableView" cellId="TCell">
-    </TableView>
 </View>

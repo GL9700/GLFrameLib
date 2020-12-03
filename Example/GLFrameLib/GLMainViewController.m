@@ -31,7 +31,6 @@
         [self.view addSubview:rootView];
     }];
 }
-
 - (GLBannerView *)bannerView {
     if(!_bannerView){
         _bannerView = [GLBannerView new];

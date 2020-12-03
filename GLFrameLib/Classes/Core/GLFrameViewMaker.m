@@ -35,8 +35,15 @@
     if (self.handle_Complete) {
         self.handle_Complete(rootView);
     }
+    if(CGRectEqualToRect(rootView.frame, CGRectZero)) {
+        rootView.frame = rootView.superview.bounds;
+    }
+    [rootView.superview configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+    }];
+    [rootView.superview.yoga applyLayoutPreservingOrigin:YES];
     printf("***** Render Complete *****\n\n");
-    [rootView.yoga applyLayoutPreservingOrigin:YES];
+//    [rootView.yoga applyLayoutPreservingOrigin:YES];
     [rootView.yoga markDirty];
 }
 

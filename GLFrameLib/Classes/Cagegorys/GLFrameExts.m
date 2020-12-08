@@ -58,9 +58,7 @@
             prop.value = propDict[prop.value];
         }
     }
-    else{
-        [GLFrameViewProp setCommonProp:prop withTarget:self inContainer:container];
-    }
+    [GLFrameViewProp setCommonProp:prop withTarget:self inContainer:container];
 }
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
     NSLog(@"undefinedKey:%@ value:%@", key, value);
@@ -77,20 +75,9 @@
     }
     else if ([prop.key isEqualToString:@"distribution"] || [prop.key isEqualToString:@"dis"]) {
         self.distribution = [prop.value integerValue];
-        //        UIStackViewDistributionFill = 0,
-        //        UIStackViewDistributionFillEqually = 1,
-        //        UIStackViewDistributionFillProportionally = 2,
-        //        UIStackViewDistributionEqualSpacing = 3,
-        //        UIStackViewDistributionEqualCentering = 4,
     }
     else if ([prop.key isEqualToString:@"alignment"] || [prop.key isEqualToString:@"ali"]) {
         self.alignment = [prop.value integerValue];
-        //        UIStackViewAlignmentFill = 0,
-        //        UIStackViewAlignmentTop = UIStackViewAlignmentLeading = 1,
-        //        UIStackViewAlignmentFirstBaseline = 2
-        //        UIStackViewAlignmentCenter = 3
-        //        UIStackViewAlignmentBottom = UIStackViewAlignmentTrailing = 4,
-        //        UIStackViewAlignmentLastBaseline = 5
     }
     else {
         [GLFrameViewProp setCommonProp:prop withTarget:self inContainer:container];
@@ -100,31 +87,30 @@
 
 @implementation UILabel (GLFrameExt)
 - (void)frameSetProp:(TypeProperty *)prop inContainer:(UIViewController *)container {
-    if ([prop.key isEqualToString:@"fontColor"] || [prop.key isEqualToString:@"color"]) {
+    if ([prop.key isEqualToString:@"color"]) {
         self.textColor = [UIColor colorFromHexStr:prop.value];
     }
     else if ([prop.key isEqualToString:@"font"]) {
         self.font = [UIFont fontWithName:prop.value size:self.font.pointSize];
     }
-    else if ([prop.key isEqualToString:@"fontSize"] || [prop.key isEqualToString:@"size"]) {
+    else if ([prop.key isEqualToString:@"size"]) {
         self.font = [self.font fontWithSize:[prop.value intValue]];
     }
-    else if ([prop.key isEqualToString:@"aligment"] || [prop.key isEqualToString:@"ali"]) {
-        self.textAlignment = NSTextAlignmentLeft;
-        /*
-         NSTextAlignmentLeft      = 0,    // Visually left aligned
-         NSTextAlignmentCenter    = 1,    // Visually centered
-         NSTextAlignmentRight     = 2,    // Visually right aligned
-         NSTextAlignmentJustified = 3,    // Fully-justified. The last line in a paragraph is natural-aligned.
-         NSTextAlignmentNatural   = 4     // Indicates the default alignment for script
-         */
+    else if ([prop.key isEqualToString:@"aligment"]) {
+        if([prop.value isEqualToString:@"center"]) {
+            self.textAlignment = NSTextAlignmentLeft;
+        }else if([prop.value isEqualToString:@"right"]) {
+            self.textAlignment = NSTextAlignmentLeft;
+        }else if([prop.value isEqualToString:@"justified"]) {
+            self.textAlignment = NSTextAlignmentLeft;
+        }else if([prop.value isEqualToString:@"natural"]) {
+            self.textAlignment = NSTextAlignmentLeft;
+        }else{
+            self.textAlignment = NSTextAlignmentLeft;
+        }
     }
     else if ([prop.key isEqualToString:@"line"]) {
         self.numberOfLines = [prop.value intValue];
-    }
-    else if ([prop.key isEqualToString:@"textAlign"]) {
-//        [0 -- 1 -- 2]
-        self.textAlignment = [prop.value intValue];
     }
     else {
         [GLFrameViewProp setCommonProp:prop withTarget:self inContainer:container];
@@ -134,19 +120,16 @@
 
 @implementation UITextField (GLFrameExt)
 - (void)frameSetProp:(TypeProperty *)prop inContainer:(UIViewController *)container {
-    if ([prop.key isEqualToString:@"fontColor"] || [prop.key isEqualToString:@"color"]) {
+    if ([prop.key isEqualToString:@"color"]) {
         self.textColor = [UIColor colorFromHexStr:prop.value];
     }
     else if ([prop.key isEqualToString:@"font"]) {
         self.font = [UIFont fontWithName:prop.value size:self.font.pointSize];
     }
-    else if ([prop.key isEqualToString:@"fontSize"] || [prop.key isEqualToString:@"size"]) {
+    else if ([prop.key isEqualToString:@"size"]) {
         self.font = [self.font fontWithSize:[prop.value intValue]];
     }
-    else if([prop.key isEqualToString:@"borderColor"]) {
-        self.layer.borderColor = [UIColor colorFromHexStr:prop.value].CGColor;
-        self.layer.borderWidth = 2;
-    }
+    
     else{
         [GLFrameViewProp setCommonProp:prop withTarget:self inContainer:container];
     }
@@ -159,13 +142,13 @@
     return button;
 }
 - (void)frameSetProp:(TypeProperty *)prop inContainer:(UIViewController *)container {
-    if ([prop.key isEqualToString:@"title"] || [prop.key isEqualToString:@"text"]) {
+    if ([prop.key isEqualToString:@"text"]) {
         [(UIButton *)self setTitle:prop.value forState:UIControlStateNormal];
     }
-    else if ([prop.key isEqualToString:@"fontSize"] || [prop.key isEqualToString:@"size"]) {
+    else if ([prop.key isEqualToString:@"size"]) {
         self.titleLabel.font = [UIFont fontWithName:self.titleLabel.font.fontName size:[prop.value intValue]];
     }
-    else if ([prop.key isEqualToString:@"fontColor"] || [prop.key isEqualToString:@"color"]) {
+    else if ([prop.key isEqualToString:@"color"]) {
         [self setTitleColor:[UIColor colorFromHexStr:prop.value] forState:UIControlStateNormal];
     }
     else if([prop.key isEqualToString:@"imgAtClock"]) {
@@ -213,21 +196,15 @@
     }
     else if ([prop.key isEqualToString:@"mode"]) {
         self.contentMode = [prop.value intValue];
-        /*
-         UIViewContentModeScaleToFill   = 0,
-         UIViewContentModeScaleAspectFit = 1,
-         UIViewContentModeScaleAspectFill = 2,
-         UIViewContentModeRedraw        = 3,
-         UIViewContentModeCenter         = 4,
-         UIViewContentModeTop            = 5,
-         UIViewContentModeBottom         = 6,
-         UIViewContentModeLeft       = 7,
-         UIViewContentModeRight      = 8,
-         UIViewContentModeTopLeft    = 9,
-         UIViewContentModeTopRight   = 10,
-         UIViewContentModeBottomLeft = 11,
-         UIViewContentModeBottomRight =12,
-         */
+        if([prop.value isEqualToString:@"scaleToFill"]) {
+            self.contentMode = UIViewContentModeScaleToFill;
+        }
+        else if([prop.value isEqualToString:@"scaleAspectFit"]) {
+            self.contentMode = UIViewContentModeScaleAspectFit;
+        }
+        else if([prop.value isEqualToString:@"scaleAspectFill"]) {
+            self.contentMode = UIViewContentModeScaleAspectFill;
+        }
     }
     else {
         [GLFrameViewProp setCommonProp:prop withTarget:self inContainer:container];

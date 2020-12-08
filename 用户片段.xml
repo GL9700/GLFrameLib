@@ -1,0 +1,401 @@
+{
+    //============ Items =============
+
+    //-------- Container ---------
+    "< Item.UIView >": {
+        "prefix": "i.View",
+        "body": [
+            "<View ${1:propertys=\"value\"}>",
+            "\t${2:<Items>}",
+            "</View>",
+        ],
+        "description": "container View"
+    },
+
+    //-------- Single Item ----------
+    "< Item.UILabel >": {
+        "prefix": "i.Label",
+        "body": [
+            "<Label ${1:property} />",
+        ],
+        "description": "Item Label"
+    },
+    "< Item.UITextField >": {
+        "prefix": "i.TextField",
+        "body": [
+            "<TextField ${1:property} />",
+        ],
+        "description": "Item TextField"
+    },
+    "< Item.UIImageView >": {
+        "prefix": "i.Image",
+        "body": [
+            "<Image ${1:property} />",
+        ],
+        "description": "Item Image"
+    },
+    "< Item.UIButton >": {
+        "prefix": "i.Button",
+        "body": [
+            "<Button ${1:property} />",
+        ],
+        "description": "Item Button"
+    },
+
+
+    //============ Propertys =============
+    "绑定源码中的名称": {
+        "prefix": "p.bundleId",
+        "body": [
+            "bundleId=\"$1\"",
+        ],
+        "description": "bundleId"
+    },
+    "宽": {
+        "prefix": "p.width",
+        "body": [
+            "width=\"${1:px|%}\"",
+        ],
+        "description": "width"
+    },
+    "高": {
+        "prefix": "p.height",
+        "body": [
+            "height=\"${1:px|%}\"",
+        ],
+        "description": "height"
+    },
+    "设置背景颜色": {
+        "prefix": "p.bgColor",
+        "body": [
+            "bgColor=\"#$1\"",
+        ],
+        "description": "bgColor"
+    },
+    "设置边框宽度": {
+        "prefix": "p.borderWidth",
+        "body": [
+            "borderWidth=\"${1:px}\"",
+        ],
+        "description": "borderWidth"
+    },
+    "设置边框颜色": {
+        "prefix": "p.borderColor",
+        "body": [
+            "borderColor=\"#$1\"",
+        ],
+        "description": "borderColor"
+    },
+    "设置圆角": {
+        "prefix": "p.cornerRadius",
+        "body": [
+            "cornerRadius=\"$1\"",
+        ],
+        "description": "cornerRadius"
+    },
+    "点击事件": {
+        "prefix": "p.onTouch",
+        "body": [
+            "onTouch=\"$1\"",
+        ],
+        "description": "onTouch"
+    },
+
+
+
+    "线性布局方向": {
+        "prefix": "p.direct",
+        "body": [
+            "direct=\"${1:v.direct...}\"",
+        ],
+        "description": "direct"
+    },
+    "布局主轴对齐": {
+        "prefix": "p.alignMainAxis",
+        "body": [
+            "alignMainAxis=\"${1:v.align...}\"",
+        ],
+        "description": "alignMainAxis"
+    },
+    "布局副轴对齐": {
+        "prefix": "p.alignSubAxis",
+        "body": [
+            "alignSubAxis=\"${1:v.align...}\"",
+        ],
+        "description": "alignSubAxis"
+    },
+    
+
+
+
+    "外边距": {
+        "prefix": "p.margin",
+        "body": [
+            "margin=\"$1\"",
+        ],
+        "description": "margin"
+    },
+    "外边距(Top)": {
+        "prefix": "p.marginTop",
+        "body": [
+            "marginTop=\"$1\"",
+        ],
+        "description": "marginTop"
+    },
+    "外边距(Left)": {
+        "prefix": "p.marginLeft",
+        "body": [
+            "marginLeft=\"$1\"",
+        ],
+        "description": "marginLeft"
+    },
+    "外边距(Bottom)": {
+        "prefix": "p.marginBottom",
+        "body": [
+            "marginBottom=\"$1\"",
+        ],
+        "description": "marginBottom"
+    },
+    "外边距(Right)": {
+        "prefix": "p.marginRight",
+        "body": [
+            "marginRight=\"$1\"",
+        ],
+        "description": "marginRight"
+    },
+
+
+
+
+    "内边距": {
+        "prefix": "p.padding",
+        "body": [
+            "padding=\"$1\"",
+        ],
+        "description": "padding"
+    },
+    "内边距(Top)": {
+        "prefix": "p.paddingTop",
+        "body": [
+            "paddingTop=\"$1\"",
+        ],
+        "description": "paddingTop"
+    },
+    "内边距(Left)": {
+        "prefix": "p.paddingLeft",
+        "body": [
+            "paddingLeft=\"$1\"",
+        ],
+        "description": "paddingLeft"
+    },
+    "内边距(Bottom)": {
+        "prefix": "p.paddingBottom",
+        "body": [
+            "paddingBottom=\"$1\"",
+        ],
+        "description": "paddingBottom"
+    },
+    "内边距(Right)": {
+        "prefix": "p.paddingRight",
+        "body": [
+            "paddingRight=\"$1\"",
+        ],
+        "description": "paddingRight"
+    },
+
+
+
+    "文字字号": {
+        "prefix": "p.size",
+        "body": [
+            "size=\"$1\"",
+        ],
+        "description": "size"
+    },
+    "文字内容": {
+        "prefix": "p.text",
+        "body": [
+            "text=\"$1\"",
+        ],
+        "description": "text"
+    },
+    "文字颜色": {
+        "prefix": "p.color",
+        "body": [
+            "color=\"#$1\"",
+        ],
+        "description": "color"
+    },
+    "文字字体": {
+        "prefix": "p.font",
+        "body": [
+            "font=\"$1\"",
+        ],
+        "description": "font"
+    },
+    "文字对齐": {
+        "prefix": "p.aligment",
+        "body": [
+            "aligment=\"${1:v.aligment...}\"",
+        ],
+        "description": "aligment"
+    },
+    "文字行数": {
+        "prefix": "p.line",
+        "body": [
+            "line=\"$1\"",
+        ],
+        "description": "line"
+    },
+
+
+
+    "图片名称或地址": {
+        "prefix": "p.src",
+        "body": [
+            "src=\"${1:name | url}\"",
+        ],
+        "description": "src"
+    },
+    "图片显示方式": {
+        "prefix": "p.mode",
+        "body": [
+            "mode=\"${1:v.imgMode.....}\"",
+        ],
+        "description": "mode"
+    },
+
+
+
+    "输入框占位文字": {
+        "prefix": "p.placeholder",
+        "body": [
+            "placeholder=\"$1\"",
+        ],
+        "description": "placeholder"
+    },
+
+
+
+
+    //============ Enum Value =============
+    "(direct)横向布局": {
+        "prefix": "v.direct.row",
+        "body": [
+            "row",
+        ],
+        "description": "direct.row"
+    },
+    "(direct)纵向布局": {
+        "prefix": "v.direct.column",
+        "body": [
+            "column",
+        ],
+        "description": "direct.column"
+    },
+    
+
+    "(布局Axis)起始位置对齐": {
+        "prefix": "v.align.start",
+        "body": [
+            "start",
+        ],
+        "description": "align.start"
+    },
+    "(布局Axis)居中位置对齐": {
+        "prefix": "v.align.center",
+        "body": [
+            "center",
+        ],
+        "description": "align.center"
+    },
+    "(布局Axis)终止位置对齐": {
+        "prefix": "v.align.end",
+        "body": [
+            "end",
+        ],
+        "description": "align.end"
+    },
+    "(布局Axis)分布对齐": {
+        "prefix": "v.align.between",
+        "body": [
+            "between",
+        ],
+        "description": "align.between"
+    },
+    "(布局Axis)基线对齐": {
+        "prefix": "v.align.baseline",
+        "body": [
+            "baseline",
+        ],
+        "description": "align.baseline"
+    },
+    "(布局Axis)环绕对齐": {
+        "prefix": "v.align.around",
+        "body": [
+            "around",
+        ],
+        "description": "align.around"
+    },
+
+
+
+    "(文字Align)左对齐": {
+        "prefix": "v.alignment.left",
+        "body": [
+            "left",
+        ],
+        "description": "alignment.left"
+    },
+    "(文字Align)中对齐": {
+        "prefix": "v.alignment.center",
+        "body": [
+            "center",
+        ],
+        "description": "alignment.center"
+    },
+    "(文字Align)右对齐": {
+        "prefix": "v.alignment.right",
+        "body": [
+            "right",
+        ],
+        "description": "alignment.right"
+    },
+    "(文字Align)主轴对齐": {
+        "prefix": "v.alignment.justified",
+        "body": [
+            "justified",
+        ],
+        "description": "alignment.justified"
+    },
+    "(文字Align)自然对齐": {
+        "prefix": "v.alignment.natural",
+        "body": [
+            "natural",
+        ],
+        "description": "alignment.natural"
+    },
+
+
+    "(图片Mode)填满": {
+        "prefix": "v.imgMode.scaleToFill",
+        "body": [
+            "scaleToFill",
+        ],
+        "description": "alignment.scaleToFill"
+    },
+    "(图片Mode)比例缩放": {
+        "prefix": "v.imgMode.scaleAspectFit",
+        "body": [
+            "scaleAspectFit",
+        ],
+        "description": "alignment.scaleAspectFit"
+    },
+    "(图片Mode)比例填满": {
+        "prefix": "v.imgMode.scaleAspectFill",
+        "body": [
+            "scaleAspectFill",
+        ],
+        "description": "alignment.scaleAspectFill"
+    },
+}

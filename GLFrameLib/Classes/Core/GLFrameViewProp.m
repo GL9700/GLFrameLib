@@ -48,8 +48,17 @@
         }
         
         /// MARK: --- common property ---
-        else if ([prop.key isEqualToString:@"bgColor"] || [prop.key isEqualToString:@"backgroundColor"]) {
+        else if ([prop.key isEqualToString:@"bgColor"]) {
             [target setValue:[UIColor colorFromHexStr:prop.value] forKey:@"backgroundColor"];
+        }
+        else if([prop.key isEqualToString:@"borderColor"]) {
+            target.layer.borderColor = [UIColor colorFromHexStr:prop.value].CGColor;
+        }
+        else if([prop.key isEqualToString:@"borderWidth"]) {
+            target.layer.borderWidth = [prop.value floatValue];
+        }
+        else if([prop.key isEqualToString:@"cornerRadius"]) {
+            target.layer.cornerRadius = [prop.value floatValue];
         }
         
         /// MARK: --- Event ---

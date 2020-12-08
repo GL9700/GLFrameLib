@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'GLFrameLib/Classes/**/*'
-  s.resource = 'GLFrameLib/Assets/*'
+  s.resource = 'GLFrameLib/Assets/**/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

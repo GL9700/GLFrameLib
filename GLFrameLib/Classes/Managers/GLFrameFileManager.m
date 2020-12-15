@@ -10,7 +10,7 @@
 @implementation GLFrameFileManager
 + (NSString *)contentFromLocalPath:(NSString *)path {
     NSString *rlt = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    printf("-> [file]\n\t...rlt load suc:%d\n\n",rlt==nil?0:1);
+    printf("-> [file]\n\t...Resource file load :%s\n\n",rlt==nil?"FAD":"SUC");
     return rlt;
 }
 @end

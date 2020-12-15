@@ -14,5 +14,7 @@
 	<string>Button</string>
 	<key>UITextField</key>
 	<string>TextField</string>
+	<key>UITableView</key>
+	<string>TableView</string>
 </dict>
 </plist>

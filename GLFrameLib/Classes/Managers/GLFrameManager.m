@@ -12,6 +12,8 @@
 #import <GLFrameXMLParser.h>
 #import <GLFrameViewMaker.h>
 
+#define kDictFile @"GLUIDict"
+
 @interface GLFrameManager()
 @property (nonatomic) NSDictionary *additional;
 @end
@@ -61,7 +63,10 @@
 
 - (NSDictionary *)additional {
     if(!_additional) {
-        _additional = [NSDictionary dictionary];
+        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+        NSString *path = [bundle pathForResource:kDictFile ofType:@"plist"];
+        _additional = [NSDictionary dictionaryWithContentsOfFile:path];
+        printf("-> [conf]\n\t...Additionals length:%lu\n\n", (unsigned long)_additional.allKeys.count);
     }
     return _additional;
 }

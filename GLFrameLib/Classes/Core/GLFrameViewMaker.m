@@ -11,18 +11,11 @@
 #import <objc/message.h>
 #import <TypeProperty.h>
 
-#define kDictFile @"GLUIDict"
-
 @interface GLFrameViewMaker ()
 @property (nonatomic) NSUInteger index;
 @end
 
 @implementation GLFrameViewMaker
-
-- (void)setAdditional:(NSDictionary *)additional {
-    _additional = [additional copy];
-    printf("-> [conf]\n\t...sub additional length:%lu\n\n", additional.allKeys.count);
-}
 
 - (void)makerView {
     [self renderTree:self.tokenTree];
@@ -48,25 +41,16 @@
 }
 
 - (UIView *)makeViewFromClassName:(NSString *)name {
-    if (name == nil) return nil;
+    if (name == nil) {
+        return nil;
+    }
     printf("-> [render]\n\t...not found View...will Create...%s\n\n", name.UTF8String);
     NSString *className = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     UIView *instance = nil;
-    NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    NSString *path = [bundle pathForResource:kDictFile ofType:@"plist"];
-    static NSDictionary *dict;
-    if (!dict) {
-        dict = [NSDictionary dictionaryWithContentsOfFile:path];
-        printf("-> [conf]\n\t...root additional length:%lu\n\n", (unsigned long)dict.allKeys.count);
-        if (self.additional != nil) {
-            NSMutableDictionary *mdict = [dict mutableCopy];
-            [mdict addEntriesFromDictionary:self.additional];
-            dict = [mdict copy];
-        }
-    }
+    
     Class cls;
-    if ([dict.allValues containsObject:className]) {
-        NSString *key = [dict allKeysForObject:className].firstObject;
+    if ([self.additional.allValues containsObject:className]) {
+        NSString *key = [self.additional allKeysForObject:className].firstObject;
         cls = NSClassFromString(key);
     }
     if ([cls conformsToProtocol:NSProtocolFromString(@"GLFrameBaseProcotol")] &&

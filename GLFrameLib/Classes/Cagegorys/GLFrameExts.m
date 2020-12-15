@@ -87,24 +87,24 @@
 
 @implementation UILabel (GLFrameExt)
 - (void)frameSetProp:(TypeProperty *)prop inContainer:(UIViewController *)container {
-    if ([prop.key isEqualToString:@"color"]) {
+    if ([prop.key isEqualToString:@"color"] || [prop.key isEqualToString:@"textColor"]) {
         self.textColor = [UIColor colorFromHexStr:prop.value];
     }
-    else if ([prop.key isEqualToString:@"font"]) {
+    else if ([prop.key isEqualToString:@"font"] || [prop.key isEqualToString:@"textFont"]) {
         self.font = [UIFont fontWithName:prop.value size:self.font.pointSize];
     }
-    else if ([prop.key isEqualToString:@"size"]) {
+    else if ([prop.key isEqualToString:@"size"] || [prop.key isEqualToString:@"textSize"]) {
         self.font = [self.font fontWithSize:[prop.value intValue]];
     }
-    else if ([prop.key isEqualToString:@"aligment"]) {
+    else if ([prop.key isEqualToString:@"aligment"] || [prop.key isEqualToString:@"textAlign"]) {
         if([prop.value isEqualToString:@"center"]) {
-            self.textAlignment = NSTextAlignmentLeft;
+            self.textAlignment = NSTextAlignmentCenter;
         }else if([prop.value isEqualToString:@"right"]) {
-            self.textAlignment = NSTextAlignmentLeft;
+            self.textAlignment = NSTextAlignmentRight;
         }else if([prop.value isEqualToString:@"justified"]) {
-            self.textAlignment = NSTextAlignmentLeft;
+            self.textAlignment = NSTextAlignmentJustified;
         }else if([prop.value isEqualToString:@"natural"]) {
-            self.textAlignment = NSTextAlignmentLeft;
+            self.textAlignment = NSTextAlignmentNatural;
         }else{
             self.textAlignment = NSTextAlignmentLeft;
         }
@@ -120,13 +120,13 @@
 
 @implementation UITextField (GLFrameExt)
 - (void)frameSetProp:(TypeProperty *)prop inContainer:(UIViewController *)container {
-    if ([prop.key isEqualToString:@"color"]) {
+    if ([prop.key isEqualToString:@"color"] || [prop.key isEqualToString:@"textColor"]) {
         self.textColor = [UIColor colorFromHexStr:prop.value];
     }
-    else if ([prop.key isEqualToString:@"font"]) {
+    else if ([prop.key isEqualToString:@"font"] || [prop.key isEqualToString:@"textFont"]) {
         self.font = [UIFont fontWithName:prop.value size:self.font.pointSize];
     }
-    else if ([prop.key isEqualToString:@"size"]) {
+    else if ([prop.key isEqualToString:@"size"] || [prop.key isEqualToString:@"textSize"]) {
         self.font = [self.font fontWithSize:[prop.value intValue]];
     }
     
@@ -145,10 +145,10 @@
     if ([prop.key isEqualToString:@"text"]) {
         [(UIButton *)self setTitle:prop.value forState:UIControlStateNormal];
     }
-    else if ([prop.key isEqualToString:@"size"]) {
+    else if ([prop.key isEqualToString:@"size"] || [prop.key isEqualToString:@"textSize"]) {
         self.titleLabel.font = [UIFont fontWithName:self.titleLabel.font.fontName size:[prop.value intValue]];
     }
-    else if ([prop.key isEqualToString:@"color"]) {
+    else if ([prop.key isEqualToString:@"color"] || [prop.key isEqualToString:@"textColor"]) {
         [self setTitleColor:[UIColor colorFromHexStr:prop.value] forState:UIControlStateNormal];
     }
     else if([prop.key isEqualToString:@"imgAtClock"]) {

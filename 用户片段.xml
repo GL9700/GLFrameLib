@@ -3,7 +3,7 @@
 
     //-------- Container ---------
     "< Item.UIView >": {
-        "prefix": "i.View",
+        "prefix": "<View",
         "body": [
             "<View ${1:propertys=\"value\"}>",
             "\t${2:<Items>}",
@@ -14,28 +14,28 @@
 
     //-------- Single Item ----------
     "< Item.UILabel >": {
-        "prefix": "i.Label",
+        "prefix": "<Label",
         "body": [
             "<Label ${1:property} />",
         ],
         "description": "Item Label"
     },
     "< Item.UITextField >": {
-        "prefix": "i.TextField",
+        "prefix": "<TextField",
         "body": [
             "<TextField ${1:property} />",
         ],
         "description": "Item TextField"
     },
     "< Item.UIImageView >": {
-        "prefix": "i.Image",
+        "prefix": "<Image",
         "body": [
             "<Image ${1:property} />",
         ],
         "description": "Item Image"
     },
     "< Item.UIButton >": {
-        "prefix": "i.Button",
+        "prefix": "<Button",
         "body": [
             "<Button ${1:property} />",
         ],
@@ -50,6 +50,13 @@
             "bundleId=\"$1\"",
         ],
         "description": "bundleId"
+    },
+    "延主轴方向占满剩余空间":{
+        "prefix": "p.grow",
+        "body": [
+            "grow=\"1\" $1",
+        ],
+        "description": "grow"
     },
     "宽": {
         "prefix": "p.width",
@@ -234,11 +241,11 @@
         "description": "font"
     },
     "文字对齐": {
-        "prefix": "p.aligment",
+        "prefix": "p.textAlign",
         "body": [
-            "aligment=\"${1:v.aligment...}\"",
+            "textAlign=\"${1:v.textAlign...}\"",
         ],
-        "description": "aligment"
+        "description": "textAlign"
     },
     "文字行数": {
         "prefix": "p.line",
@@ -341,39 +348,39 @@
 
 
     "(文字Align)左对齐": {
-        "prefix": "v.alignment.left",
+        "prefix": "v.textAlign.left",
         "body": [
             "left",
         ],
-        "description": "alignment.left"
+        "description": "textAlign.left"
     },
     "(文字Align)中对齐": {
-        "prefix": "v.alignment.center",
+        "prefix": "v.textAlign.center",
         "body": [
             "center",
         ],
-        "description": "alignment.center"
+        "description": "textAlign.center"
     },
     "(文字Align)右对齐": {
-        "prefix": "v.alignment.right",
+        "prefix": "v.textAlign.right",
         "body": [
             "right",
         ],
-        "description": "alignment.right"
+        "description": "textAlign.right"
     },
     "(文字Align)主轴对齐": {
-        "prefix": "v.alignment.justified",
+        "prefix": "v.textAlign.justified",
         "body": [
             "justified",
         ],
-        "description": "alignment.justified"
+        "description": "textAlign.justified"
     },
     "(文字Align)自然对齐": {
-        "prefix": "v.alignment.natural",
+        "prefix": "v.textAlign.natural",
         "body": [
             "natural",
         ],
-        "description": "alignment.natural"
+        "description": "textAlign.natural"
     },
 
 
@@ -382,20 +389,20 @@
         "body": [
             "scaleToFill",
         ],
-        "description": "alignment.scaleToFill"
+        "description": "imgMode.scaleToFill"
     },
     "(图片Mode)比例缩放": {
         "prefix": "v.imgMode.scaleAspectFit",
         "body": [
             "scaleAspectFit",
         ],
-        "description": "alignment.scaleAspectFit"
+        "description": "imgMode.scaleAspectFit"
     },
     "(图片Mode)比例填满": {
         "prefix": "v.imgMode.scaleAspectFill",
         "body": [
             "scaleAspectFill",
         ],
-        "description": "alignment.scaleAspectFill"
+        "description": "imgMode.scaleAspectFill"
     },
 }

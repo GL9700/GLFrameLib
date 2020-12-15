@@ -71,11 +71,15 @@
             }
         }
     }
-    [parentNode.children addObject:node];
-    self.nodes[SF(@"%d", self.level)] = node;
-    if(parentNode != nil && self.root == nil) {
+    if(parentNode==nil){
+        parentNode = node;
+    }else{
+        [parentNode.children addObject:node];
+    }
+    if(self.root == nil) {
         self.root = parentNode;
     }
+    self.nodes[SF(@"%d", self.level)] = node;
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName {

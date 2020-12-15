@@ -21,7 +21,7 @@
 @implementation GLFrameManager
 
 + (void)enableDebug:(BOOL)debug {
-    
+    // TODO: enable Debug ??
 }
 
 + (void)registerFrameDict:(NSString *)path {

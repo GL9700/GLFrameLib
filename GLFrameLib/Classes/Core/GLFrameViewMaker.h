@@ -9,6 +9,7 @@
 #import <ElementEntity.h>
 
 @interface GLFrameViewMaker : NSObject
+
 @property (nonatomic) id targetContainer;   // 绑定属性的父类
 @property (nonatomic) ElementEntity *tokenTree;
 @property (nonatomic) NSDictionary *additional;

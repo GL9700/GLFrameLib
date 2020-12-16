@@ -8,7 +8,7 @@
 #import "GLFrameRubyParser.h"
 #import <ElementEntity.h>
 #import <TypeProperty.h>
-
+#import "GLFrameLib_Dev_PCH.h"
 @interface GLFrameRubyParser()
 @property (nonatomic) NSMutableArray *tokens;
 @property (nonatomic) NSInteger index;
@@ -48,7 +48,7 @@
             }
         }
     }
-    printf("-> [parser]\n\t...token length:%lu\n\n", (unsigned long)self.tokens.count);
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t...token length:%lu\n\n", (unsigned long)self.tokens.count);
     if(handle){
         handle([self generateTokenTree]);
     }

@@ -9,14 +9,14 @@
 #import <TypeProperty.h>
 #import <UIView+Yoga.h>
 #import "UIColor+GLExtension.h"
-
+#import "GLFrameLib_Dev_PCH.h"
 
 @implementation GLFrameViewProp
 + (void)setCommonProp:(TypeProperty *)prop withTarget:(UIView *)target inContainer:(UIViewController *)container {
     if([prop.value isKindOfClass:[NSString class]]) {
-        printf("-> [Setting Prop Common]\n\t...%s:%s\n\n", prop.key.UTF8String, [prop.value UTF8String]);
+        GLFL_IN_DEV_MODE==0 ? : printf("-> [Setting Prop Common]\n\t...%s:%s\n\n", prop.key.UTF8String, [prop.value UTF8String]);
     }else if([prop.value isKindOfClass:[NSNumber class]]){
-        printf("-> [Setting Prop Common]\n\t...%s:%.2f\n\n", prop.key.UTF8String, [prop.value floatValue]);
+        GLFL_IN_DEV_MODE==0 ? : printf("-> [Setting Prop Common]\n\t...%s:%.2f\n\n", prop.key.UTF8String, [prop.value floatValue]);
     }
     if ([target isKindOfClass:[UIView class]]) {
         if ([[self keywords_enum] containsObject:prop.key]) {

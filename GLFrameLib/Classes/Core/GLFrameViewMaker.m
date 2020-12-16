@@ -10,6 +10,7 @@
 #import <GLFrameExts.h>
 #import <objc/message.h>
 #import <TypeProperty.h>
+#import "GLFrameLib_Dev_PCH.h"
 
 @interface GLFrameViewMaker ()
 @property (nonatomic) NSUInteger index;
@@ -22,29 +23,27 @@
 }
 
 - (void)renderTree:(ElementEntity *)root {
-    printf("-> [core]\n\t...start Render\n\n");
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [core]\n\t...start Render\n\n");
     UIView *rootView = [self viewFromElementWithTokenTree:root];
-    printf("-> [core]\n\t...complete Render\n\n");
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [core]\n\t...complete Render\n\n");
     if (self.handle_Complete) {
         self.handle_Complete(rootView);
     }
     if(CGRectEqualToRect(rootView.frame, CGRectZero)) {
         rootView.frame = rootView.superview.bounds;
     }
-    [rootView.superview configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+    [rootView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
     }];
-    [rootView.superview.yoga applyLayoutPreservingOrigin:YES];
-    printf("***** Render Complete *****\n\n");
-//    [rootView.yoga applyLayoutPreservingOrigin:YES];
-    [rootView.yoga markDirty];
+    [rootView.yoga applyLayoutPreservingOrigin:YES];
+    GLFL_IN_DEV_MODE==0 ? :printf("***** Render Complete *****\n\n");
 }
 
 - (UIView *)makeViewFromClassName:(NSString *)name {
     if (name == nil) {
         return nil;
     }
-    printf("-> [render]\n\t...not found View...will Create...%s\n\n", name.UTF8String);
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [render]\n\t...not found View...will Create...%s\n\n", name.UTF8String);
     NSString *className = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     UIView *instance = nil;
     
@@ -55,13 +54,13 @@
     }
     if ([cls conformsToProtocol:NSProtocolFromString(@"GLFrameBaseProcotol")] &&
         [cls respondsToSelector:NSSelectorFromString(@"frameNew")]) {
-        printf("-> [custom init]\n\t...-[%s frameNew]\n\n", NSStringFromClass(cls).UTF8String);
+        GLFL_IN_DEV_MODE==0 ? :printf("-> [custom init]\n\t...-[%s frameNew]\n\n", NSStringFromClass(cls).UTF8String);
         instance = [cls frameNew];
     }
     else {
         instance = [cls new];
     }
-    printf("-> [render]\n\t...not found View... did Create...%s\n\n", NSStringFromClass(instance.class).UTF8String);
+    GLFL_IN_DEV_MODE==0 ? :printf("-> [render]\n\t...not found View... did Create...%s\n\n", NSStringFromClass(instance.class).UTF8String);
     return instance;
 }
 
@@ -76,11 +75,11 @@
             elementInstance = [self.targetContainer performSelector:select];
 #pragma clang diagnostic pop
             if (elementInstance) {
-                printf("-> [render]\n\t...finded bundle View...%s\n\n", element.bundleProperty.UTF8String);
+                GLFL_IN_DEV_MODE==0 ? : printf("-> [render]\n\t...finded bundle View...%s\n\n", element.bundleProperty.UTF8String);
             }
         }
         if (elementInstance == nil) {
-            printf("-> [ ‼️ Warning ‼️ ]\n\t...Not found BundleName: %s in Container (%s)\n\n", element.bundleProperty.UTF8String, NSStringFromClass([self.targetContainer class]).UTF8String);
+            GLFL_IN_DEV_MODE==0 ? : printf("-> [ ‼️ Warning ‼️ ]\n\t...Not found BundleName: %s in Container (%s)\n\n", element.bundleProperty.UTF8String, NSStringFromClass([self.targetContainer class]).UTF8String);
         }
     }
     if ([element isKindOfClass:[ElementEntity class]] && elementInstance == nil) {
@@ -92,7 +91,7 @@
         }];
         if ([elementInstance conformsToProtocol:NSProtocolFromString(@"GLFrameBaseProcotol")] &&
             [elementInstance respondsToSelector:NSSelectorFromString(@"frameStyle")]) {
-            printf("->[custom style]\n\t...-[%s frameStyle]\n\n", NSStringFromClass(elementInstance.class).UTF8String);
+            GLFL_IN_DEV_MODE==0 ? :printf("->[custom style]\n\t...-[%s frameStyle]\n\n", NSStringFromClass(elementInstance.class).UTF8String);
             [elementInstance frameStyle];
         }
         for (ElementEntity *son in element.children) {
@@ -105,7 +104,7 @@
             }
         }
         for (TypeProperty *prop in element.props) {
-            printf("-> [Setting Prop Common]\n\t...%s:%s\n\n", prop.key.UTF8String, [prop.value UTF8String]);
+            GLFL_IN_DEV_MODE==0 ? :printf("-> [Setting Prop Common]\n\t...%s:%s\n\n", prop.key.UTF8String, [prop.value UTF8String]);
             [elementInstance frameSetProp:prop inContainer:self.targetContainer];
         }
     }

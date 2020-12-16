@@ -11,18 +11,15 @@
 #import <GLFrameRubyParser.h>
 #import <GLFrameXMLParser.h>
 #import <GLFrameViewMaker.h>
+#import "GLFrameLib_Dev_PCH.h"
 
 #define kDictFile @"GLUIDict"
-
+#define debugPrintf()
 @interface GLFrameManager()
 @property (nonatomic) NSDictionary *additional;
 @end
 
 @implementation GLFrameManager
-
-+ (void)enableDebug:(BOOL)debug {
-    // TODO: enable Debug ??
-}
 
 + (void)registerFrameDict:(NSString *)path {
     NSMutableDictionary *sub = [NSMutableDictionary dictionaryWithContentsOfFile:path];
@@ -47,11 +44,14 @@
         path = [[NSBundle mainBundle] pathForResource:NameOrPath.stringByDeletingPathExtension ofType:NameOrPath.pathExtension];
     }
     
-    printf("\n***** Start GLUIKit *****\n");
-    printf("-> path:\n\t%s\n\n", [path UTF8String]);
-    printf("-> container:\n\t%s\n\n", [[NSString stringWithFormat:@"%@", container] UTF8String]);
+    if(GLFL_IN_DEV_MODE) {
+        printf("\n***** Start GLUIKit *****\n");
+        printf("-> path:\n\t%s\n\n", [path UTF8String]);
+        printf("-> container:\n\t%s\n\n", [[NSString stringWithFormat:@"%@", container] UTF8String]);
+    }
     NSString *content = [GLFrameFileManager contentFromLocalPath:path];
-    [[GLFrameXMLParser new] treeForContent:content complete:^(ElementEntity *rootEntity) {
+    GLFrameXMLParser *parser = [GLFrameXMLParser new];
+    [parser treeForContent:content complete:^(ElementEntity *rootEntity) {
         GLFrameViewMaker *maker = [GLFrameViewMaker new];
         maker.additional = [GLFrameManager SharedKit].additional;
         maker.handle_Complete = handleComplete;
@@ -66,7 +66,7 @@
         NSBundle *bundle = [NSBundle bundleForClass:self.class];
         NSString *path = [bundle pathForResource:kDictFile ofType:@"plist"];
         _additional = [NSDictionary dictionaryWithContentsOfFile:path];
-        printf("-> [conf]\n\t...Additionals length:%lu\n\n", (unsigned long)_additional.allKeys.count);
+        GLFL_IN_DEV_MODE==0 ? : printf("-> [conf]\n\t...Additionals length:%lu\n\n", (unsigned long)_additional.allKeys.count);
     }
     return _additional;
 }

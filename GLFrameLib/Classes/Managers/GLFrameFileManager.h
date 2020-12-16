@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GLFrameFileManager : NSObject
+
 + (NSString *)contentFromLocalPath:(NSString *)path;
 @end
 

@@ -8,6 +8,7 @@
 #import "GLFrameXMLParser.h"
 #import <objc/message.h>
 #import "NSString+GLExtension.h"
+#import "GLFrameLib_Dev_PCH.h"
 
 @interface NSDictionary (DescExt)
 @end
@@ -40,23 +41,23 @@
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
-    printf("-> [parser]\n\t...start\n\n");
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t...start\n\n");
     self.level = 0;
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     if(parser.parserError) {
-        printf("-> [parser]\n\t...end...has Error \n\t...Error:%s\n\n", [[parser.parserError.userInfo description] UTF8String]);
+        GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t...end...has Error \n\t...Error:%s\n\n", [[parser.parserError.userInfo description] UTF8String]);
         return;
     }
-    printf("-> [parser]\n\t...end...pass\n\n");
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t...end...pass\n\n");
     self.parserComplete ? self.parserComplete(self.root) : nil;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(NSDictionary<NSString *, NSString *> *)attributeDict {
     ElementEntity *parentNode = self.nodes[SF(@"%d", self.level)];
     self.level += 1;
-    printf("-> [parser]\n\t...<属性> (lv:%d) %s, %s\n\n", self.level, [elementName UTF8String], [[attributeDict description] UTF8String]);
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t...<属性> (lv:%d) %s, %s\n\n", self.level, [elementName UTF8String], [[attributeDict description] UTF8String]);
     ElementEntity *node = [ElementEntity new];
     node.parent = parentNode;
     node.name = elementName;
@@ -84,26 +85,26 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName {
     self.level -= 1;
-    printf("-> [parser]\n\t...<结束标记> %s \n\n", [elementName UTF8String]);
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t...<结束标记> %s \n\n", [elementName UTF8String]);
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
-        printf("-> [parser]\n\t ...<内容> %s\n\n", [string UTF8String]);
+        GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t ...<内容> %s\n\n", [string UTF8String]);
     }
 }
 
 - (void)parser:(NSXMLParser *)parser foundComment:(NSString *)comment {
-    printf("-> [parser]\n\t ...<注释内容> %s\n\n", [comment UTF8String]);
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t ...<注释内容> %s\n\n", [comment UTF8String]);
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    printf("-> [parser]\n\t ...<!! 解析出错 !!> %s\n\n", [[parseError.userInfo description] UTF8String]);
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t ...<!! 解析出错 !!> %s\n\n", [[parseError.userInfo description] UTF8String]);
     [parser abortParsing];
 }
 
 - (void)parser:(NSXMLParser *)parser validationErrorOccurred:(NSError *)validationError {
-    printf("-> [parser]\n\t ...<!! 验证错误 !!> %s\n\n", [[validationError.userInfo description] UTF8String]);
+    GLFL_IN_DEV_MODE==0 ? : printf("-> [parser]\n\t ...<!! 验证错误 !!> %s\n\n", [[validationError.userInfo description] UTF8String]);
     [parser abortParsing];
 }
 

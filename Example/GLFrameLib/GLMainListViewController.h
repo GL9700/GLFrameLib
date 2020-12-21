@@ -1,8 +1,8 @@
 //
-//  GLMainViewController.h
+//  GLMainListViewController.h
 //  GLFrameLib_Example
 //
-//  Created by liguoliang on 2020/12/1.
+//  Created by 李国梁 on 2020/12/21.
 //  Copyright © 2020 36617161@qq.com. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GLMainViewController : UIViewController
+@interface GLMainListViewController : UIViewController
 
 @end
 

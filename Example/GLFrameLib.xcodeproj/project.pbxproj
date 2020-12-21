@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		215D895E2575DD2500CC6542 /* GLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215D895D2575DD2500CC6542 /* GLMainViewController.m */; };
+		213B53B02590F40B004D3A8A /* GLMainListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B53AF2590F40B004D3A8A /* GLMainListViewController.m */; };
+		213B53BD25910C1D004D3A8A /* GLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B53BC25910C1D004D3A8A /* GLHomeViewController.m */; };
+		213B53C425910E57004D3A8A /* GLHomeViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = 213B53C325910E57004D3A8A /* GLHomeViewController.xml */; };
 		215D89612575DD7500CC6542 /* Main.ui in Resources */ = {isa = PBXBuildFile; fileRef = 215D89602575DD7500CC6542 /* Main.ui */; };
 		215D896B2575DDB200CC6542 /* GLBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 215D89692575DDB200CC6542 /* GLBannerView.m */; };
 		215D896E2575DDCD00CC6542 /* Banner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215D896D2575DDCD00CC6542 /* Banner.plist */; };
@@ -21,15 +23,17 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* GLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* GLAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* GLViewController.m */; };
+		6003F59E195388D20070C39A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* AppDelegate.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		215D895C2575DD2500CC6542 /* GLMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLMainViewController.h; sourceTree = "<group>"; };
-		215D895D2575DD2500CC6542 /* GLMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLMainViewController.m; sourceTree = "<group>"; };
+		213B53AE2590F40B004D3A8A /* GLMainListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLMainListViewController.h; sourceTree = "<group>"; };
+		213B53AF2590F40B004D3A8A /* GLMainListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLMainListViewController.m; sourceTree = "<group>"; };
+		213B53BB25910C1D004D3A8A /* GLHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLHomeViewController.h; sourceTree = "<group>"; };
+		213B53BC25910C1D004D3A8A /* GLHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLHomeViewController.m; sourceTree = "<group>"; };
+		213B53C325910E57004D3A8A /* GLHomeViewController.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GLHomeViewController.xml; sourceTree = "<group>"; };
 		215D89602575DD7500CC6542 /* Main.ui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Main.ui; sourceTree = "<group>"; };
 		215D89692575DDB200CC6542 /* GLBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBannerView.m; sourceTree = "<group>"; };
 		215D896A2575DDB200CC6542 /* GLBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBannerView.h; sourceTree = "<group>"; };
@@ -48,10 +52,8 @@
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* GLFrameLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLFrameLib-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* GLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* GLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* GLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* GLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLViewController.m; sourceTree = "<group>"; };
+		6003F59C195388D20070C39A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6003F59D195388D20070C39A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213B53B42590F5EB004D3A8A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				213B53B62590F617004D3A8A /* Views */,
+				213B53BB25910C1D004D3A8A /* GLHomeViewController.h */,
+				213B53BC25910C1D004D3A8A /* GLHomeViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		213B53B62590F617004D3A8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				215D89682575DDB200CC6542 /* Banner */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		215D89682575DDB200CC6542 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +109,7 @@
 			path = Banner;
 			sourceTree = "<group>";
 		};
-		218BA0452574F75A000DE996 /* uis */ = {
+		218BA0452574F75A000DE996 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				21F5DA8B25778CED00825B36 /* Main.xml */,
@@ -97,8 +117,9 @@
 				215D898F25762CF000CC6542 /* Login.xml */,
 				218BA0472574F75A000DE996 /* Login.ui */,
 				215D89602575DD7500CC6542 /* Main.ui */,
+				213B53C325910E57004D3A8A /* GLHomeViewController.xml */,
 			);
-			path = uis;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -136,16 +157,14 @@
 		6003F593195388D20070C39A /* Example for GLFrameLib */ = {
 			isa = PBXGroup;
 			children = (
-				218BA0452574F75A000DE996 /* uis */,
-				215D89682575DDB200CC6542 /* Banner */,
-				6003F59C195388D20070C39A /* GLAppDelegate.h */,
-				6003F59D195388D20070C39A /* GLAppDelegate.m */,
-				6003F5A5195388D20070C39A /* GLViewController.h */,
-				6003F5A6195388D20070C39A /* GLViewController.m */,
-				215D895C2575DD2500CC6542 /* GLMainViewController.h */,
-				215D895D2575DD2500CC6542 /* GLMainViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				6003F59C195388D20070C39A /* AppDelegate.h */,
+				6003F59D195388D20070C39A /* AppDelegate.m */,
+				213B53AE2590F40B004D3A8A /* GLMainListViewController.h */,
+				213B53AF2590F40B004D3A8A /* GLMainListViewController.m */,
+				218BA0452574F75A000DE996 /* Resources */,
+				213B53B42590F5EB004D3A8A /* Classes */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for GLFrameLib";
@@ -243,6 +262,7 @@
 				215D899025762CF000CC6542 /* Login.xml in Resources */,
 				215D89612575DD7500CC6542 /* Main.ui in Resources */,
 				218BA04A2574F75A000DE996 /* Login.ui in Resources */,
+				213B53C425910E57004D3A8A /* GLHomeViewController.xml in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				21F5DA8C25778CED00825B36 /* Main.xml in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -310,11 +330,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213B53B02590F40B004D3A8A /* GLMainListViewController.m in Sources */,
 				215D896B2575DDB200CC6542 /* GLBannerView.m in Sources */,
-				215D895E2575DD2500CC6542 /* GLMainViewController.m in Sources */,
-				6003F59E195388D20070C39A /* GLAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* GLViewController.m in Sources */,
+				6003F59E195388D20070C39A /* AppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				213B53BD25910C1D004D3A8A /* GLHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

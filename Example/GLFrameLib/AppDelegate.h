@@ -1,5 +1,5 @@
 //
-//  GLAppDelegate.h
+//  AppDelegate.h
 //  GLFrameLib
 //
 //  Created by 36617161@qq.com on 11/30/2020.
@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface GLAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

@@ -11,6 +11,7 @@
 #endif
 
 #import "GLFrameExts.h"
+#import "GLFrameLib_Dev_PCH.h"
 #import "GLFrameViewMaker.h"
 #import "GLFrameViewProp.h"
 #import "GLFrameLib.h"

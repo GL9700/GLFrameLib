@@ -1,0 +1,12 @@
+<?xml version="1.0" encode="UTF-8"?>
+<View id="container">
+    <View id="banner">
+        
+    </View>
+    <View id="modules">
+        
+    </View>
+    <View id="bottomInfo">
+        
+    </View>
+</View>

@@ -1,6 +1,6 @@
 PODS:
   - GLExtensions (1.0.5)
-  - GLFrameLib (0.0.1):
+  - GLFrameLib (0.0.2):
     - GLExtensions
     - SDWebImage
     - Yoga
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GLExtensions: 383d5532d5824e1b34c04e860752df58d7de37cd
-  GLFrameLib: cd1c26762f040f01accd3b2c2505ecab1358d38a
+  GLFrameLib: d60c51f425e924caccb9c9f98fc8dad5b80429da
   GLRouter: c01ea5cfecb27f1f83211213b112a34d7003ab7b
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c

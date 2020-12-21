@@ -1,6 +1,6 @@
 {
   "name": "GLFrameLib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "A short description of GLFrameLib.",
   "description": "GLFrameLib is FrameLib use scriptFile",
   "homepage": "https://github.com/GL9700/GLFrameLib",
@@ -13,13 +13,13 @@
   },
   "source": {
     "git": "https://github.com/GL9700/GLFrameLib.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "9.0"
   },
   "source_files": "GLFrameLib/Classes/**/*",
-  "resources": "GLFrameLib/Assets/*",
+  "resources": "GLFrameLib/Assets/**/*",
   "dependencies": {
     "Yoga": [
 

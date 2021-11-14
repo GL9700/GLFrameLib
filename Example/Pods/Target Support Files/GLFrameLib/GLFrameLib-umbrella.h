@@ -14,6 +14,7 @@
 #import "GLFrameLib_Dev_PCH.h"
 #import "GLFrameViewMaker.h"
 #import "GLFrameViewProp.h"
+#import "GLFrameBaseTableViewCell.h"
 #import "GLFrameLib.h"
 #import "GLFrameFileManager.h"
 #import "GLFrameManager.h"

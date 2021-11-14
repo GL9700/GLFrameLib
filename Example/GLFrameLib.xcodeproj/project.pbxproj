@@ -15,6 +15,7 @@
 		215D896E2575DDCD00CC6542 /* Banner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215D896D2575DDCD00CC6542 /* Banner.plist */; };
 		215D899025762CF000CC6542 /* Login.xml in Resources */ = {isa = PBXBuildFile; fileRef = 215D898F25762CF000CC6542 /* Login.xml */; };
 		218BA04A2574F75A000DE996 /* Login.ui in Resources */ = {isa = PBXBuildFile; fileRef = 218BA0472574F75A000DE996 /* Login.ui */; };
+		21DECEEC2594EE10001EA376 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21DECEEB2594EE10001EA376 /* cell.xib */; };
 		21F5DA8C25778CED00825B36 /* Main.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21F5DA8B25778CED00825B36 /* Main.xml */; };
 		21F5DA9525779C0400825B36 /* Main2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21F5DA9425779C0400825B36 /* Main2.xml */; };
 		3215D152A5F78B0B0D7EA417 /* Pods_GLFrameLib_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FD594FA3A1849BE7213BC2 /* Pods_GLFrameLib_Example.framework */; };
@@ -40,6 +41,7 @@
 		215D896D2575DDCD00CC6542 /* Banner.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Banner.plist; sourceTree = "<group>"; };
 		215D898F25762CF000CC6542 /* Login.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Login.xml; sourceTree = "<group>"; };
 		218BA0472574F75A000DE996 /* Login.ui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.ui; sourceTree = "<group>"; };
+		21DECEEB2594EE10001EA376 /* cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
 		21F5DA8B25778CED00825B36 /* Main.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Main.xml; sourceTree = "<group>"; };
 		21F5DA9425779C0400825B36 /* Main2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Main2.xml; sourceTree = "<group>"; };
 		2367DAB5E68932603BBD64B9 /* Pods-GLFrameLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLFrameLib_Example.debug.xcconfig"; path = "Target Support Files/Pods-GLFrameLib_Example/Pods-GLFrameLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				213B53B62590F617004D3A8A /* Views */,
 				213B53BB25910C1D004D3A8A /* GLHomeViewController.h */,
 				213B53BC25910C1D004D3A8A /* GLHomeViewController.m */,
+				21DECEEB2594EE10001EA376 /* cell.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				215D899025762CF000CC6542 /* Login.xml in Resources */,
+				21DECEEC2594EE10001EA376 /* cell.xib in Resources */,
 				215D89612575DD7500CC6542 /* Main.ui in Resources */,
 				218BA04A2574F75A000DE996 /* Login.ui in Resources */,
 				213B53C425910E57004D3A8A /* GLHomeViewController.xml in Resources */,

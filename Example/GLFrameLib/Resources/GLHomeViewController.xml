@@ -1,12 +1,12 @@
 <?xml version="1.0" encode="UTF-8"?>
 <View id="container">
     <View id="banner">
-        
+        <ImageView src="https://wx3.sinaimg.cn/large/00704dV1ly4glrrhyv1lcj30hs0a0dng.jpg" />
     </View>
     <View id="modules">
-        
-    </View>
-    <View id="bottomInfo">
-        
+        <Button text="首页" />
+        <Button text="页A" />
+        <Button text="页B" />
+        <Button text="页C" />
     </View>
 </View>
